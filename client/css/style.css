@@ -83,6 +83,11 @@ main {
     overflow: auto;
     white-space: nowrap;
     max-width: 100%;
+    
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 
 #rooms {
@@ -92,7 +97,7 @@ main {
     box-shadow: 4px 4px 10px black, 1px 1px 10px rgb(96, 40, 17);
     display: inline-block; 
     height: 300px;
-    margin: 110px 15px;
+    margin: 90px 15px;
     width: auto;
     padding: 5px;
 }
