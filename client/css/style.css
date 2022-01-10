@@ -104,11 +104,40 @@ a {
     }
 
     #rooms li.living {
-        background: url("/imgs/nathan-oakley-4pD1nPrt36Y-unsplash.jpg");
+        background: url("/imgs/livingroom-unsplash.jpg");
         background-repeat: no-repeat;
         background-size: cover;
-        object-fit: none;
-
+        object-fit: contain;
+    }
+    #rooms li.bedroom {
+        background: url("/imgs/bedroom-unsplash.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        object-fit: contain;
+    }
+    #rooms li.kitchen {
+        background: url("/imgs/kitchen-unsplash.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        object-fit: contain;
+    }
+    #rooms li.hallway {
+        background: url("/imgs/hallway-unsplash.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        object-fit: contain;
+    }
+    #rooms li.kids {
+        background: url("/imgs/kids-unsplash.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        object-fit: contain;
+    }
+    #rooms li.houses {
+        background: url("/imgs/hous-unsplash.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        object-fit: contain;
     }
 
 /* Navbar, FOOTER */
