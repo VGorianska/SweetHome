@@ -11,7 +11,7 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "server": "nodemon server/server.js",
     "client": "vite",
-    "start": "vite preview"
+    "start": "vite preview --port 3000"
   },
   "keywords": [],
   "author": "",
