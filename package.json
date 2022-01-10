@@ -17,6 +17,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@vitejs/plugin-react": "1.1.4",
     "vite": "^2.7.2",
     "express": "^4.17.2",
     "mongoose": "^6.1.5",
