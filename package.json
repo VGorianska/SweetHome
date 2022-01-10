@@ -11,7 +11,7 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "server": "nodemon server/server.js",
     "client": "vite",
-    "start": "node server/server.js"
+    "start": "vite preview"
   },
   "keywords": [],
   "author": "",
