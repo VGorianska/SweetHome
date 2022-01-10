@@ -10,8 +10,7 @@
     "build": "vite build",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "server": "nodemon server/server.js",
-    "client": "vite",
-    "start": "vite preview --port 3000"
+    "client": "vite"
   },
   "keywords": [],
   "author": "",
