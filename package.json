@@ -10,12 +10,17 @@
     "build": "vite build",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "server": "nodemon server/server.js",
-    "client": "vite"
+    "client": "vite",
+    "start": "vite prewiew -c vite.config.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@mui/icons-material": "^5.2.5",
+    "@mui/material": "^5.2.8",
     "express": "^4.17.2",
     "mongoose": "^6.1.5",
     "react": "^17.0.2",
@@ -23,9 +28,9 @@
   },
   "devDependencies": {
     "@types/express": "4.17.13",
+    "@vitejs/plugin-react": "1.1.4",
     "nodemon": "2.0.15",
-    "vite": "2.7.10",
-    "@vitejs/plugin-react": "1.1.4"
+    "vite": "2.7.10"
   },
   "type": "module"
 }
