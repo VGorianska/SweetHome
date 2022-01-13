@@ -11,7 +11,7 @@ export default function MainMenu() {
   };
 
   return (
-    <BottomNavigation sx={{ width: 375, borderRadius: 2, position: 'fixed', bottom: 0 }} value={value} onChange={handleChange}>
+    <BottomNavigation sx={{ width: '100%', position: 'fixed', bottom: 0 }} value={value} onChange={handleChange}>
       <BottomNavigationAction
         label="Recents"
         value="recents"

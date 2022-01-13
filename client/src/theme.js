@@ -4,24 +4,26 @@ const themeOptions = {
     palette: {
         type: 'light',
         primary: {
-            main: '#cdcdce',
+            main: '#E66F20',
         },
         secondary: {
-            main: '#e6642b',
+            main: '#47DB16',
         },
         info: {
             main: '#5f1994',
         },
         type: 'dark',
-        primary: {
-            main: '#cdcdce',
-        },
-        secondary: {
-            main: '#e6642b',
-        },
-        info: {
-            main: '#5f1994',
-        },
+        // primary: {
+        //     main: '#737485',
+        //     light: '#8a7b84',
+        //     dark: '#413b41',
+        // },
+        // secondary: {
+        //     main: '#e6642b',
+        // },
+        // info: {
+        //     main: '#5f1994',
+        // },
     },
 };
 
