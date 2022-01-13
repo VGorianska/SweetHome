@@ -5,11 +5,12 @@ import ImageListItemBar from '@mui/material/ImageListItemBar';
 
 export default function RoomsImageList() {
     return (
-        <ImageList sx={{ width: 350, height: 700, m: '0.8rem', mt: 0 }}>
+
+        <ImageList variant="masonry">
             <ImageListItem key="Subheader" cols={2}>
             </ImageListItem>
-            {itemData.map((item) => (
-                <ImageListItem key={item.img}>
+            {itemData.map((item, i) => (
+                <ImageListItem key={i}>
                     <img
                         src={`${item.img}?w=248&fit=crop&auto=format`}
                         srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
@@ -28,7 +29,7 @@ export default function RoomsImageList() {
 
 const itemData = [
     {
-        img: 'https://images.unsplash.com/photo-1481277542470-605612bd2d61',
+        img: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
         title: 'Houses',
         featured: true,
     },
@@ -37,28 +38,24 @@ const itemData = [
         title: 'Bedrooms'
     },
     {
-        img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
+        img: 'https://images.unsplash.com/photo-1613685301918-59b1039422cc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80',
         title: 'Kids rooms'
     },
     {
-        img: 'https://images.unsplash.com/photo-1563298723-dcfebaa392e3',
+        img: 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80',
         title: 'Kitchens'
     },
     {
-        img: 'https://images.unsplash.com/photo-1533827432537-70133748f5c8',
+        img: 'https://images.unsplash.com/photo-1532785164954-bd1f69628df2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
         title: 'Hallways'
     },
     {
-        img: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62',
+        img: 'https://images.unsplash.com/photo-1608571386933-8e9bf576ea95?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80',
         title: 'Bathrooms',
         featured: true,
     },
     {
-        img: 'https://images.unsplash.com/photo-1516802273409-68526ee1bdd6',
-        title: 'Color Palettes'
-    },
-    {
-        img: 'https://images.unsplash.com/photo-1518756131217-31eb79b20e8f',
+        img: 'https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDF8fGxpdmluZyUyMHJvb218ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
         title: 'Living rooms'
     },
 

@@ -6,7 +6,7 @@ import {Menu, Search} from '@mui/icons-material';
 export default function Bar() {
   return (
     <Box sx={{ zIndex: 999, flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="fixed">
         <Toolbar>
           <IconButton
             size="medium"
