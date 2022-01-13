@@ -13,6 +13,10 @@ import {
   Route,
 } from "react-router-dom";
 import Notfoundpage from "./components/oops";
+import BedroomsList from './components/rooms/bedrooms';
+import LivingroomsList from './components/rooms/livingRooms'
+import BathroomsList from './components/rooms/bathrooms'
+
 
 ReactDOM.render(
   <React.StrictMode>
@@ -23,6 +27,9 @@ ReactDOM.render(
           <Routes>
             <Route path="/" element={< RoomsImageList />} />
             <Route path='*' element={<Notfoundpage />} />
+            <Route path="/bedrooms" element={<BedroomsList />} />
+            <Route path="/livingrooms" element={<LivingroomsList />} />
+            <Route path="/Bathrooms" element={<BathroomsList />} />
           </Routes>
         </BrowserRouter>
       </Container>
