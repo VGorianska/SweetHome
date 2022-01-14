@@ -1,6 +1,15 @@
 import { createTheme } from '@mui/material/styles';
 
 const themeOptions = {
+    // components: {
+    //     MuiCssBaseline: {
+    //       styleOverrides: {
+    //         body: {
+    //             background: '#333' 
+    //         }
+    //       },
+    //     },
+    //   },
     palette: {
         type: 'light',
         primary: {
@@ -13,17 +22,6 @@ const themeOptions = {
             main: '#5f1994',
         },
         type: 'dark',
-        // primary: {
-        //     main: '#737485',
-        //     light: '#8a7b84',
-        //     dark: '#413b41',
-        // },
-        // secondary: {
-        //     main: '#e6642b',
-        // },
-        // info: {
-        //     main: '#5f1994',
-        // },
     },
 };
 

@@ -6,21 +6,24 @@ import theme from "./theme"
 import { ThemeProvider } from '@mui/material/styles'
 import MainMenu from './components/MainMenu'
 import HomePageIconList from './components/HomePage'
-import { Container } from '@mui/material'
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom";
+import { Container, CssBaseline, GlobalStyles } from '@mui/material'
+import { BrowserRouter, Routes, Route} from "react-router-dom";
 import Notfoundpage from "./components/oops";
 import BedroomsList from './components/rooms/bedrooms';
 import LivingroomsList from './components/rooms/livingRooms'
 import BathroomsList from './components/rooms/bathrooms'
 
-
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <GlobalStyles
+        styles={{
+          body: {
+            background: '#dde0e7'
+          }
+        }}
+      />
       <Bar />
       <Container sx={{ p: '45px 0' }}>
         <BrowserRouter>

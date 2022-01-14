@@ -1,7 +1,7 @@
 import * as React from 'react';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
-import {LocationOn, Favorite, Restore, Folder} from '@mui/icons-material';
+import { LocationOn, Favorite, Restore, Folder } from '@mui/icons-material';
 
 export default function MainMenu() {
   const [value, setValue] = React.useState('recents');
