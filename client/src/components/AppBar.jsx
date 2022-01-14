@@ -1,7 +1,14 @@
 import * as React from 'react';
-import {Typography, IconButton, Toolbar, Box, AppBar} from '@mui/material';
-import {Menu, Search} from '@mui/icons-material';
+import { Typography, IconButton, Toolbar, Box, AppBar } from '@mui/material';
+import { Menu, Search } from '@mui/icons-material';
+import PhotoCamera from '@mui/icons-material/PhotoCamera';
+import Stack from '@mui/material/Stack';
+import { styled } from '@mui/material/styles';
 
+
+const Input = styled('input')({
+  display: 'none',
+});
 
 export default function Bar() {
   return (
@@ -19,16 +26,24 @@ export default function Bar() {
           <Typography
             variant="h6"
             component="span"
-            sx={{ flexGrow: 1}}
+            sx={{ flexGrow: 1 }}
           >
             Sweet Home
           </Typography>
+          <Stack direction="row" alignItems="center" spacing={2}>
+          <label htmlFor="icon-button-file">
+            <Input accept="image/*" id="icon-button-file" type="file" />
+            <IconButton color="secondary" aria-label="upload picture" component="span">
+              <PhotoCamera />
+            </IconButton>
+          </label>
+          </Stack>
           <IconButton
             size="medium"
             edge="end"
             color="inherit"
           >
-          <Search />            
+            <Search />
           </IconButton>
         </Toolbar>
       </AppBar>

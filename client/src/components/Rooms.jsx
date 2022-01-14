@@ -7,8 +7,6 @@ export default function RoomsImageList() {
     return (
 
         <ImageList variant="masonry">
-            <ImageListItem key="Subheader" cols={2}>
-            </ImageListItem>
             {itemData.map((item, i) => (
                 <ImageListItem key={i}>
                     <img
@@ -17,7 +15,7 @@ export default function RoomsImageList() {
                         alt={item.title}
                         loading="lazy"
                     />
-                    <ImageListItemBar sx={{ background: 'rgba(0, 0, 0, 0.2)' }}
+                    <ImageListItemBar sx={{ background: 'rgba(0, 0, 0, 0.2)'}}
                         title={item.title}
                     />
                 </ImageListItem>

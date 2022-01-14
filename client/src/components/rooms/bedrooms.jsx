@@ -1,6 +1,9 @@
 import * as React from 'react';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
+import IconButton from '@mui/material/IconButton';
+import StarBorderIcon from '@mui/icons-material/StarBorder';
+import ImageListItemBar from '@mui/material/ImageListItemBar';
 
 export default function BedroomsList() {
     return (
@@ -10,6 +13,19 @@ export default function BedroomsList() {
             </ImageListItem>
             {itemData.map((item, i) => (
                 <ImageListItem key={i}>
+                    <ImageListItemBar sx={{ background: 'rgba(0, 0, 0, 0.1)'}}
+                        title={item.title}
+                        position="top"
+              actionIcon={
+                <IconButton
+                  sx={{ color: 'white' }}
+                  aria-label={`star ${item.title}`}
+                >
+                  <StarBorderIcon />
+                </IconButton>
+              }
+              actionPosition="right"
+                    />
                     <img
                         src={`${item.img}?w=248&fit=crop&auto=format`}
                         loading="eager"

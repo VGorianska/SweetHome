@@ -22,14 +22,14 @@ ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <Bar />
-      <Container sx={{ p: '65px 6px' }}>
+      <Container sx={{ p: '45px 0' }}>
         <BrowserRouter>
           <Routes>
             <Route path="/" element={< RoomsImageList />} />
-            <Route path='*' element={<Notfoundpage />} />
             <Route path="/bedrooms" element={<BedroomsList />} />
             <Route path="/livingrooms" element={<LivingroomsList />} />
             <Route path="/Bathrooms" element={<BathroomsList />} />
+            <Route path='*' element={<Notfoundpage />} />
           </Routes>
         </BrowserRouter>
       </Container>
