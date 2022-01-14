@@ -33,7 +33,7 @@ export default function Bar() {
           <Stack direction="row" alignItems="center" spacing={2}>
           <label htmlFor="icon-button-file">
             <Input accept="image/*" id="icon-button-file" type="file" />
-            <IconButton color="secondary" aria-label="upload picture" component="span">
+            <IconButton color="inherit" aria-label="upload picture" component="span">
               <PhotoCamera />
             </IconButton>
           </label>

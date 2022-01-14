@@ -5,7 +5,7 @@ import Bar from './components/AppBar'
 import theme from "./theme"
 import { ThemeProvider } from '@mui/material/styles'
 import MainMenu from './components/MainMenu'
-import RoomsImageList from './components/Rooms'
+import HomePageIconList from './components/HomePage'
 import { Container } from '@mui/material'
 import {
   BrowserRouter,
@@ -25,7 +25,7 @@ ReactDOM.render(
       <Container sx={{ p: '45px 0' }}>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={< RoomsImageList />} />
+            <Route path="/" element={< HomePageIconList />} />
             <Route path="/bedrooms" element={<BedroomsList />} />
             <Route path="/livingrooms" element={<LivingroomsList />} />
             <Route path="/Bathrooms" element={<BathroomsList />} />
