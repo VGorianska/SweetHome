@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 // import '../../css/index.css'
-import Bar from './components/AppBar'
+import Bar from './components/TopAppBar'
 import theme from "./theme"
 import { ThemeProvider } from '@mui/material/styles'
 import MainMenu from './components/MainMenu'

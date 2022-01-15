@@ -41,7 +41,7 @@ export default function HomePageIconList() {
             <Stack direction="row" spacing={2} sx={{ justifyContent: 'space-evenly', alignItems: 'flex-end' }}>
                 <Box sx={{ mt: '0.5rem', background: '#fafafc', width: 180, height: 128, display: 'flex', justifyContent: 'center'  }}>
                     <IconButton LinkComponent={Link} to="/kitchens" aria-label="delete" sx={{ display: 'flex', flexDirection: 'column', alignContent: 'space-around' }}>
-                        <SoupKitchen sx={{ fontSize: '5rem', color: '#a3a643' }} />Kitchens
+                        <SoupKitchen sx={{ fontSize: '5rem' }} />Kitchens
                     </IconButton>
                 </Box>
                 <Box sx={{ mt: '0.5rem', background: '#fafafc', width: 180, height: 128, display: 'flex', justifyContent: 'center'  }}>
