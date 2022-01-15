@@ -6,11 +6,9 @@ import IconButton from '@mui/material/IconButton';
 import Box from '@mui/material/Box';
 import { Link } from 'react-router-dom';
 
-
-
 export default function HomePageIconList() {
     return (
-        <Container sx={{ mt: '1rem', background: '#dde0e7'}}>
+        <Container sx={{ background: '#dde0e7', padding: 0, mt: '0.5rem' }}>
             <Stack direction="row" spacing={2} sx={{ justifyContent: 'space-evenly', alignItems: 'flex-end' }}>
                 <Box sx={{ background: '#fafafc', width: 180, height: 128, display: 'flex', justifyContent: 'center' }}>
                     <IconButton LinkComponent={Link} to="/houses" aria-label="delete" sx={{ display: 'flex', flexDirection: 'column', alignContent: 'space-around' }}>

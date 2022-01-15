@@ -1,7 +1,7 @@
 import * as React from 'react';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
-import { LocationOn, Favorite, Restore, Folder } from '@mui/icons-material';
+import { LocationOn, Restore, Folder, Star } from '@mui/icons-material';
 
 export default function MainMenu() {
   const [value, setValue] = React.useState('recents');
@@ -15,20 +15,23 @@ export default function MainMenu() {
       <BottomNavigationAction
         label="Recents"
         value="recents"
-        icon={<Restore />}
+        icon={<Restore sx={{ fontSize: '2rem' }} />}
         sx={{ mr: '1px' }}
       />
       <BottomNavigationAction
         label="Favorites"
         value="favorites"
-        icon={<Favorite />}
+        icon={<Star sx={{ fontSize: '2rem' }} />}
       />
       <BottomNavigationAction
         label="Nearby"
         value="nearby"
-        icon={<LocationOn />}
+        icon={<LocationOn sx={{ fontSize: '2rem' }} />}
       />
-      <BottomNavigationAction label="Folder" value="folder" icon={<Folder />} />
+      <BottomNavigationAction
+        label="Folder"
+        value="folder"
+        icon={<Folder sx={{ fontSize: '2rem' }} />} />
     </BottomNavigation>
   );
 }
