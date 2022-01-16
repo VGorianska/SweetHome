@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Typography, IconButton, Toolbar, Box, AppBar, CssBaseline, Drawer, Divider, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
+import { Typography, IconButton, Toolbar, Box, CssBaseline, Drawer, Divider, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
 import { Search } from '@mui/icons-material';
 import { styled, useTheme } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -8,6 +8,8 @@ import MuiAppBar from '@mui/material/AppBar';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
+import { useLocation, useNavigate} from "react-router-dom";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 // import SettingsIcon from '@mui/icons-material/Settings';
 
 const drawerWidth = 180;
@@ -58,7 +60,10 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 }));
 
 export default function Bar() {
-
+  let navigate = useNavigate();
+  const location = useLocation();
+  const isMain = location.pathname === '/' 
+  console.log(location);
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
@@ -70,6 +75,10 @@ export default function Bar() {
     setOpen(false);
   };
 
+  const goBack = () => {
+    navigate('/')
+  }
+
   return (
     <Box sx={{ zIndex: 999, flexGrow: 1 }}>
       <CssBaseline />
@@ -79,11 +88,11 @@ export default function Bar() {
             size="medium"
             edge="start"
             aria-label="open drawer"
-            onClick={handleDrawerOpen}
+            onClick={ isMain ? handleDrawerOpen : goBack}
             color="inherit"
             sx={{ mr: 1, ...(open && { display: 'none' }) }}
           >
-            <MenuIcon />
+            { isMain ? <MenuIcon /> : <ArrowBackIcon /> }
           </IconButton>
           <Typography
             variant="h6"
@@ -150,3 +159,5 @@ export default function Bar() {
 
   );
 }
+
+//const Home = () => <div className={styles.page}>Home Page</div>;

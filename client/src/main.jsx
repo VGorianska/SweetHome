@@ -7,7 +7,7 @@ import { ThemeProvider } from '@mui/material/styles'
 import MainMenu from './components/MainMenu'
 import HomePageIconList from './components/HomePage'
 import { Container, CssBaseline } from '@mui/material'
-import { BrowserRouter, Routes, Route} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HousesList from './components/rooms/houses'
 import LivingroomsList from './components/rooms/livingRooms'
 import BedroomsList from './components/rooms/bedrooms';
@@ -23,9 +23,9 @@ ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Bar title= ''/>
-      <Container>
-        <BrowserRouter>
+      <BrowserRouter>
+        <Bar title='' />
+        <Container>
           <Routes>
             <Route path="/" element={< HomePageIconList />} />
             <Route path="/houses" element={< HousesList />} />
@@ -38,10 +38,10 @@ ReactDOM.render(
             <Route path="/hallways" element={<HallwaysList />} />
             <Route path='*' element={<Notfoundpage />} />
           </Routes>
-        </BrowserRouter>
-      </Container>
+        </Container>
+      </BrowserRouter>
       <MainMenu />
     </ThemeProvider>
-  </React.StrictMode>,
+  </React.StrictMode >,
   document.getElementById('root')
 )
