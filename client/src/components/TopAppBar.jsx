@@ -8,11 +8,23 @@ import MuiAppBar from '@mui/material/AppBar';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
-import { useLocation, useNavigate} from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 // import SettingsIcon from '@mui/icons-material/Settings';
 
 const drawerWidth = 180;
+
+const titles = {
+  "/": 'Sweet Home',
+  "/houses": 'Houses',
+  "/livingrooms": 'Living Rooms',
+  "/bedrooms": 'Bedrooms',
+  "/kidsrooms": 'Kidsrooms',
+  "/kitchens": 'Kitchens',
+  "/diningrooms": 'Diningrooms',
+  "/bathrooms": 'Bathrooms',
+  "/hallways": 'Hallways',
+}
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
   ({ theme, open }) => ({
@@ -62,10 +74,11 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 export default function Bar() {
   let navigate = useNavigate();
   const location = useLocation();
-  const isMain = location.pathname === '/' 
+  const isMain = location.pathname === '/'
   console.log(location);
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
+  const title = titles[location.pathname] || 'Sweet Home';
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -88,25 +101,25 @@ export default function Bar() {
             size="medium"
             edge="start"
             aria-label="open drawer"
-            onClick={ isMain ? handleDrawerOpen : goBack}
+            onClick={isMain ? handleDrawerOpen : goBack}
             color="inherit"
             sx={{ mr: 1, ...(open && { display: 'none' }) }}
           >
-            { isMain ? <MenuIcon /> : <ArrowBackIcon /> }
+            {isMain ? <MenuIcon /> : <ArrowBackIcon />}
           </IconButton>
           <Typography
             variant="h6"
             component="span"
-            sx={{ flexGrow: 1}}
+            sx={{ flexGrow: 1 }}
           >
-            Sweet Home
+            {title}
           </Typography>
           <IconButton
             size="medium"
             edge="end"
             color="inherit"
           >
-          <Search />            
+            <Search />
           </IconButton>
         </Toolbar>
       </TopAppBar>
@@ -151,9 +164,9 @@ export default function Bar() {
           ))}
         </List>
       </Drawer>
-      <Main open={open}  sx= {{ margin: 0, padding: 0 }}>
+      <Main open={open} sx={{ margin: 0, padding: 0 }}>
         <DrawerHeader />
-        
+
       </Main>
     </Box>
 

@@ -24,7 +24,7 @@ ReactDOM.render(
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <BrowserRouter>
-        <Bar title='' />
+        <Bar />
         <Container>
           <Routes>
             <Route path="/" element={< HomePageIconList />} />
