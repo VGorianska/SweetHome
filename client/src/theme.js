@@ -1,7 +1,11 @@
 import { createTheme } from '@mui/material/styles';
 
 const themeOptions = {
+    
     palette: {
+        background: {
+            default: "#dde0e7"
+          },
         type: 'light',
         primary: {
             main: '#E66F20',
@@ -13,17 +17,6 @@ const themeOptions = {
             main: '#5f1994',
         },
         type: 'dark',
-        // primary: {
-        //     main: '#737485',
-        //     light: '#8a7b84',
-        //     dark: '#413b41',
-        // },
-        // secondary: {
-        //     main: '#e6642b',
-        // },
-        // info: {
-        //     main: '#5f1994',
-        // },
     },
 };
 
