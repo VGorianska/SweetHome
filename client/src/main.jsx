@@ -17,7 +17,7 @@ import DiningsRoomsList from './components/rooms/diningrooms'
 import BathroomsList from './components/rooms/bathrooms'
 import HallwaysList from './components/rooms/hallways'
 import Notfoundpage from "./components/oops";
-import { padding } from '@mui/system'
+import Room from "./components/Room";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -28,6 +28,7 @@ ReactDOM.render(
         <Container>
           <Routes>
             <Route path="/" element={< HomePageIconList />} />
+            <Route path="/room-photos" element={<Room />} />
             <Route path="/houses" element={< HousesList />} />
             <Route path="/livingrooms" element={<LivingroomsList />} />
             <Route path="/bedrooms" element={<BedroomsList />} />
