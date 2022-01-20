@@ -1,23 +1,17 @@
 import * as React from 'react';
-import { Typography, IconButton, Toolbar, Box, CssBaseline, AppBar } from '@mui/material';
-import { Search } from '@mui/icons-material';
-import { useTheme } from '@mui/material/styles';
+import { Typography, IconButton, Toolbar, Box, CssBaseline, AppBar, ListItemIcon } from '@mui/material';
+import { Search, HandymanOutlined, FeedOutlined, AutoAwesomeMotionOutlined } from '@mui/icons-material';
 import MenuIcon from '@mui/icons-material/Menu';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import PopupState, { bindTrigger, bindMenu } from 'material-ui-popup-state';
-// import SettingsIcon from '@mui/icons-material/Settings';
-
-
 
 export default function Bar() {
-
   const goBack = () => {
     navigate('/')
   }
 
   const menuOpen = () => {
-
   }
 
   return (
@@ -40,9 +34,9 @@ export default function Bar() {
             <MenuIcon />
           </IconButton>
           <Menu {...bindMenu(popupState)}>
-            <MenuItem onClick={popupState.close}>Profile</MenuItem>
-            <MenuItem onClick={popupState.close}>My account</MenuItem>
-            <MenuItem onClick={popupState.close}>Logout</MenuItem>
+            <MenuItem onClick={popupState.close}><ListItemIcon><AutoAwesomeMotionOutlined /></ListItemIcon> Pictures</MenuItem>
+            <MenuItem onClick={popupState.close}><ListItemIcon><HandymanOutlined /></ListItemIcon> Experts</MenuItem>
+            <MenuItem onClick={popupState.close}><ListItemIcon><FeedOutlined /></ListItemIcon> News</MenuItem>
           </Menu>
         </React.Fragment>
       )}

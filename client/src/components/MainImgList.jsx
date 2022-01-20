@@ -56,28 +56,28 @@ export default function MainImgList() {
 
             <ImageList cols={2} gap={4}>
                 {roomPhotos
-                .filter((roomPhoto) => roomPhoto.type == currentTab)
-                .map((item, i) => (
-                    <ImageListItem key={i}>
-                        <ImageListItemBar sx={{ background: 'rgba(0, 0, 0, 0.1)' }}
-                            position="top"
-                            actionIcon={
-                                <IconButton
-                                    onClick={() => toggleFavourite(item.id)}
-                                    sx={{ color: 'white' }}
-                                    aria-label={`star ${item.title}`}
-                                >
-                                    {item.isFavourite ? <StarIcon /> : <StarBorderIcon />}
-                                </IconButton>
-                            }
-                            actionPosition="right"
-                        />
-                        <img
-                            src={`${item.url}?w=248&fit=crop&auto=format`}
-                            loading="eager"
-                        />
-                    </ImageListItem>
-                ))}
+                    .filter((roomPhoto) => roomPhoto.type == currentTab)
+                    .map((item, i) => (
+                        <ImageListItem key={i}>
+                            <ImageListItemBar sx={{ background: 'rgba(0, 0, 0, 0.1)' }}
+                                position="top"
+                                actionIcon={
+                                    <IconButton
+                                        onClick={() => toggleFavourite(item.id)}
+                                        sx={{ color: 'white' }}
+                                        aria-label={`star ${item.title}`}
+                                    >
+                                        {item.isFavourite ? <StarIcon /> : <StarBorderIcon />}
+                                    </IconButton>
+                                }
+                                actionPosition="right"
+                            />
+                            <img
+                                src={`${item.url}?w=248&fit=crop&auto=format`}
+                                loading="eager"
+                            />
+                        </ImageListItem>
+                    ))}
             </ImageList>
         </Container>
     )
