@@ -16,7 +16,7 @@ const drawerWidth = 180;
 
 const titles = {
   "/": 'Sweet Home',
-  "/houses": 'Houses',
+  "/room-photos": "ImgContainer",
   "/livingrooms": 'Living Rooms',
   "/bedrooms": 'Bedrooms',
   "/kidsrooms": 'Kidsrooms',

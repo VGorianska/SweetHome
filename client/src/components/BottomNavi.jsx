@@ -3,7 +3,7 @@ import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import { LocationOn, Restore, Folder, Star } from '@mui/icons-material';
 
-export default function MainMenu() {
+export default function BottomNavi() {
   const [value, setValue] = React.useState('recents');
 
   const handleChange = (event, newValue) => {
