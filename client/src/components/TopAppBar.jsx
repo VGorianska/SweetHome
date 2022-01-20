@@ -34,7 +34,7 @@ export default function Bar() {
             aria-label="open drawer"
             onClick= {menuOpen}
             color="inherit"
-            sx={{ mr: 1git }}
+            sx={{ mr: 1}}
             {...bindTrigger(popupState)}
           >
             <MenuIcon />
