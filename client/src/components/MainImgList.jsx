@@ -24,7 +24,7 @@ export default function MainImgList() {
     }
     console.log('Tab', currentTab)
     return (
-        <Container sx={{ background: '#dde0e7', padding: 0, margin: 0 }}>
+        <Container sx={{ background: '#dde0e7', padding: 0, m: '60px 0' }}>
             <Box sx={{ flexGrow: 1, width: '100%', height: '40px', bgcolor: 'inherit', padding: 0, margin: 0 }}>
                 <Tabs
                     value={currentTab}
