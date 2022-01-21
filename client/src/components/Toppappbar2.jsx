@@ -1,34 +1,31 @@
 import * as React from 'react';
+import { withRouter } from 'react-router-dom';
 import { Typography, IconButton, Toolbar, Box, CssBaseline, AppBar, ListItemIcon } from '@mui/material';
 import { Search, HandymanOutlined, FeedOutlined, AutoAwesomeMotionOutlined } from '@mui/icons-material';
 import MenuIcon from '@mui/icons-material/Menu';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import PopupState from 'material-ui-popup-state';
-import { useNavigate } from "react-router-dom";
+import PopupState, { bindTrigger, bindMenu } from 'material-ui-popup-state';
 
-export default function Bar() {
+const Bar = props => {
+  const { history } = props
 
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const selectedIndex = location.pathname; 
   const open = Boolean(anchorEl);
-  const navigate = useNavigate();
-
-
-  const handleMenuItemClick = (url) => {
-    navigate(url, { replace: true });
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleMenuClick = pageURL => {
+    history.push(pageURL)
     setAnchorEl(null);
   };
 
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
-  const menuOpen = (event) => {
-    setAnchorEl(event.currentTarget)
+  const goBack = () => {
+    navigate('/')
   }
 
-
+  const menuOpen = () => {
+  }
 
   return (
     <Box sx={{ zIndex: 999, flexGrow: 1 }}>
@@ -45,17 +42,17 @@ export default function Bar() {
                   onClick={menuOpen}
                   color="inherit"
                   sx={{ mr: 1 }}
-
+                  {...bindTrigger(popupState)}
                 >
                   <MenuIcon />
                 </IconButton>
-                <Menu
-                  anchorEl={anchorEl}
-                  open={open}
-                  onClose={handleClose}>
-                  <MenuItem onClick={() => handleMenuItemClick('/')} selected={selectedIndex === '/'}><ListItemIcon><AutoAwesomeMotionOutlined /></ListItemIcon> Pictures</MenuItem>
-                  <MenuItem onClick={() => handleMenuItemClick('/experts')} selected={selectedIndex === '/experts'}><ListItemIcon><HandymanOutlined /></ListItemIcon> Experts</MenuItem>
-                  <MenuItem onClick={() => handleMenuItemClick('/news')} selected={selectedIndex === '/news'}><ListItemIcon><FeedOutlined /></ListItemIcon> News</MenuItem>
+                <Menu {...bindMenu(popupState)}
+                open={open}
+                onClose={() => setAnchorEl(null)}
+                >
+                  <MenuItem onClick={() => {handleMenuClick('./')}}><ListItemIcon><AutoAwesomeMotionOutlined /></ListItemIcon> Pictures</MenuItem>
+                  <MenuItem onClick={() => {handleMenuClick('./experts')}}><ListItemIcon><HandymanOutlined /></ListItemIcon> Experts</MenuItem>
+                  <MenuItem onClick={() => {handleMenuClick('./news')}}><ListItemIcon><FeedOutlined /></ListItemIcon> News</MenuItem>
                 </Menu>
               </React.Fragment>
             )}
@@ -81,4 +78,7 @@ export default function Bar() {
   );
 }
 
+
 //const Home = () => <div className={styles.page}>Home Page</div>;
+
+export default withRouter(Bar)
