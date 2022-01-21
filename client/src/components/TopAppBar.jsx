@@ -4,7 +4,6 @@ import { Search, HandymanOutlined, FeedOutlined, AutoAwesomeMotionOutlined } fro
 import MenuIcon from '@mui/icons-material/Menu';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import PopupState from 'material-ui-popup-state';
 import { useNavigate } from "react-router-dom";
 
 export default function Bar() {
@@ -28,16 +27,11 @@ export default function Bar() {
     setAnchorEl(event.currentTarget)
   }
 
-
-
   return (
     <Box sx={{ zIndex: 999, flexGrow: 1 }}>
       <CssBaseline />
       <AppBar position="fixed" open={true}>
         <Toolbar>
-          <PopupState variant="popover" popupId="demo-popup-menu">
-            {(popupState) => (
-              <React.Fragment>
                 <IconButton
                   size="medium"
                   edge="start"
@@ -45,7 +39,6 @@ export default function Bar() {
                   onClick={menuOpen}
                   color="inherit"
                   sx={{ mr: 1 }}
-
                 >
                   <MenuIcon />
                 </IconButton>
@@ -57,9 +50,6 @@ export default function Bar() {
                   <MenuItem onClick={() => handleMenuItemClick('/experts')} selected={selectedIndex === '/experts'}><ListItemIcon><HandymanOutlined /></ListItemIcon> Experts</MenuItem>
                   <MenuItem onClick={() => handleMenuItemClick('/news')} selected={selectedIndex === '/news'}><ListItemIcon><FeedOutlined /></ListItemIcon> News</MenuItem>
                 </Menu>
-              </React.Fragment>
-            )}
-          </PopupState>
           <Typography
             variant="h6"
             component="span"
