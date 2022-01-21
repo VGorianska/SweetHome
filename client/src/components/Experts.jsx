@@ -12,6 +12,7 @@ export default function Experts() {
                     <ImageListItem key={item.img}>
                         <ImageListItemBar sx={{ background: 'rgba(0, 0, 0, 0.1)' }}
                             position="top"
+                            title={item.title}
                         />
                         <img
                             src={`${item.img}?w=248&fit=crop&auto=format`}
