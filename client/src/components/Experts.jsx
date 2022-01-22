@@ -14,9 +14,11 @@ export default function Experts() {
                             position="top"
                             title={item.title}
                         />
+
                         <img
-                            src={`${item.img}?w=248&fit=crop&auto=format`}
+                            src={`${item.img}&w=248&fit=crop&auto=format`}
                         />
+
                     </ImageListItem>
                 ))}
             </ImageList>
@@ -26,19 +28,19 @@ export default function Experts() {
 
 const itemData = [
     {
-        img: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1631&q=80',
+        img: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8',
         title: 'Architects'
     },
     {
-        img: 'https://images.unsplash.com/photo-1564078516393-cf04bd966897?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
+        img: 'https://images.unsplash.com/photo-1564078516393-cf04bd966897?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8',
         title: 'Interior Architects'
     },
     {
-        img: 'https://images.unsplash.com/photo-1592250892572-37524c069b60?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
+        img: 'https://images.unsplash.com/photo-1592250892572-37524c069b60?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8',
         title: 'Construction Companies'
     },
     {
-        img: 'https://images.unsplash.com/photo-1432958576632-8a39f6b97dc7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1473&q=80',
+        img: 'https://images.unsplash.com/photo-1432958576632-8a39f6b97dc7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8',
         title: 'Landscape Designers'
     }
 ];

@@ -46,7 +46,7 @@ export default function Bar() {
                   anchorEl={anchorEl}
                   open={open}
                   onClose={handleClose}>
-                  <MenuItem onClick={() => handleMenuItemClick('/')} selected={selectedIndex === '/'}><ListItemIcon><AutoAwesomeMotionOutlined /></ListItemIcon> Pictures</MenuItem>
+                  <MenuItem onClick={() => handleMenuItemClick('/')} selected={selectedIndex === '/'}><ListItemIcon><AutoAwesomeMotionOutlined /></ListItemIcon> Get Ideas</MenuItem>
                   <MenuItem onClick={() => handleMenuItemClick('/experts')} selected={selectedIndex === '/experts'}><ListItemIcon><HandymanOutlined /></ListItemIcon> Experts</MenuItem>
                   <MenuItem onClick={() => handleMenuItemClick('/news')} selected={selectedIndex === '/news'}><ListItemIcon><FeedOutlined /></ListItemIcon> News</MenuItem>
                 </Menu>
