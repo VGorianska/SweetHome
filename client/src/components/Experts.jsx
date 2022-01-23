@@ -57,7 +57,8 @@ export default function Experts() {
                                 height: 130,
                                 color: 'white', 
                                 background: `linear-gradient(rgba(125, 125, 125, 0.5),rgba(0, 0, 0, 0.5)), url(${expert.img}&w=348&h=200&auto=format)`,
-                                backgroundSize: 'cover'
+                                backgroundSize: 'cover',
+                                backgroundPosition: 'center'
                             }}
                             avatar={
                                 <Avatar src={expert.avatar} />
@@ -67,8 +68,8 @@ export default function Experts() {
                         />
                         <CardActions>
                             <IconButton sx={{ marginRight: 'auto' }}><Share /></IconButton>
-                            <IconButton size="small" ><Phone /></IconButton>
-                            <IconButton size="small"><Email /></IconButton>
+                            <IconButton onClick={() => location=`callto: ${expert.phonenumber}`}><Phone /></IconButton>
+                            <IconButton onClick={() => location=`mailto: ${expert.mail}`}><Email /></IconButton>
                         </CardActions>
                     </Card>
                 ))}

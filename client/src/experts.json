@@ -7,7 +7,7 @@
         "rating": 4.3,
         "location": "Hamburg",
         "phonenumber": "+490880800458",
-        "e-mail": "mustermann@gmail.com"
+        "mail": "mustermann@gmail.com"
     },
     {
         "name": "Mrs. Musterfrau",
@@ -16,7 +16,7 @@
         "rating": 4.5,
         "location": "Munich",
         "phonenumber": "+419684580258",
-        "e-mail": "musterfrau@gmail.com"
+        "mail": "musterfrau@gmail.com"
     },
     {
         "name": "Construction GMBH",
@@ -25,7 +25,7 @@
         "rating": 4.7,
         "location": "Munich",
         "phonenumber": "+497486792074",
-        "e-mail": "construction@gmail.com"
+        "mail": "construction@gmail.com"
     },
     {
         "name": "Landscape GMBH",
@@ -34,6 +34,6 @@
         "rating": 4.8,
         "location": "Humburg",
         "phonenumber": "+498367828935",
-        "e-mail": "landscape_designers@gmail.com"
+        "mail": "landscape_designers@gmail.com"
     }
 ]
