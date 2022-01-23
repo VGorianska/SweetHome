@@ -66,9 +66,9 @@ export default function Experts() {
                             subheader={<Rating value={expert.rating} precision={0.1} readOnly />}
                         />
                         <CardActions>
-                            <IconButton size="small"><Phone /></IconButton>
+                            <IconButton sx={{ marginRight: 'auto' }}><Share /></IconButton>
+                            <IconButton size="small" ><Phone /></IconButton>
                             <IconButton size="small"><Email /></IconButton>
-                            <IconButton><Share /></IconButton>
                         </CardActions>
                     </Card>
                 ))}
