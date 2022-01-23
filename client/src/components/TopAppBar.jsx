@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Typography, IconButton, Toolbar, Box, CssBaseline, AppBar, ListItemIcon } from '@mui/material';
-import { Search, HandymanOutlined, FeedOutlined, AutoAwesomeMotionOutlined } from '@mui/icons-material';
+import { HandymanOutlined, FeedOutlined, AutoAwesomeMotionOutlined } from '@mui/icons-material';
 import MenuIcon from '@mui/icons-material/Menu';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
@@ -57,13 +57,6 @@ export default function Bar() {
           >
             Sweet Home
           </Typography>
-          <IconButton
-            size="medium"
-            edge="end"
-            color="inherit"
-          >
-            <Search />
-          </IconButton>
         </Toolbar>
       </AppBar>
     </Box>

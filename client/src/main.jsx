@@ -7,7 +7,7 @@ import { ThemeProvider } from '@mui/material/styles'
 import BottomNavi from './components/BottomNavi'
 import { Container, CssBaseline } from '@mui/material'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Notfoundpage from "./components/oops";
+import NotFound from "./components/NotFound";
 import ImgContainer from "./components/MainImgList";
 import Experts from "./components/Experts";
 import News from "./components/News";
@@ -23,11 +23,11 @@ ReactDOM.render(
             <Route path="/" element={<ImgContainer />} />
             <Route path="/experts" element={<Experts />} />
             <Route path="/news" element={<News />} />
-            <Route path='*' element={<Notfoundpage />} />
+            <Route path='*' element={<NotFound />} />
           </Routes>
         </Container>
+        <BottomNavi />
       </BrowserRouter>
-      <BottomNavi />
     </ThemeProvider>
   </React.StrictMode >,
   document.getElementById('root')
