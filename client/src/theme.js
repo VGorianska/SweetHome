@@ -1,11 +1,11 @@
 import { createTheme } from '@mui/material/styles';
 
 const themeOptions = {
-    
+
     palette: {
         background: {
             default: "#dde0e7"
-          },
+        },
         type: 'light',
         primary: {
             main: '#E66F20',
@@ -16,7 +16,6 @@ const themeOptions = {
         info: {
             main: '#5f1994',
         },
-        type: 'dark',
     },
 };
 

@@ -9,6 +9,8 @@ import { Container, CssBaseline } from '@mui/material'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Notfoundpage from "./components/oops";
 import ImgContainer from "./components/MainImgList";
+import Experts from "./components/Experts";
+import News from "./components/News";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -19,7 +21,8 @@ ReactDOM.render(
         <Container>
           <Routes>
             <Route path="/" element={<ImgContainer />} />
-            {/* <Route path="/livingrooms" element={<LivingroomsList />} /> */}
+            <Route path="/experts" element={<Experts />} />
+            <Route path="/news" element={<News />} />
             <Route path='*' element={<Notfoundpage />} />
           </Routes>
         </Container>
