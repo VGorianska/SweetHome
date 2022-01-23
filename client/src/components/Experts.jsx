@@ -6,10 +6,14 @@ import Box from '@mui/material/Box';
 import experts from '../experts.json';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import Avatar from '@mui/material/Avatar';
+import CardHeader from '@mui/material/CardHeader';
+import IconButton from '@mui/material/IconButton';
+import { Phone, Email, Share } from '@mui/icons-material';
+import Rating from '@mui/material/Rating';
+
+
+
 
 export default function Experts() {
     const [currentTab, setCurrentTab] = React.useState("architects");
@@ -19,10 +23,6 @@ export default function Experts() {
         setCurrentTab(newValue);
     };
 
-    function toggleFavourite(imageId) {
-        console.log('toggling favourite status', imageId)
-    }
-    console.log('Tab', currentTab)
     return (
         <Container sx={{ background: '#dde0e7', padding: 0, m: '70px 0' }}>
             <Box sx={{ flexGrow: 1, width: '100%', bgcolor: 'inherit', padding: 0, margin: 0 }}>
@@ -49,25 +49,26 @@ export default function Experts() {
 
             {experts
                 .filter((expert) => expert.type == currentTab)
-                .map((item, i) => (
+                .map((expert, i) => (
                     <Card sx={{ maxWidth: 345 }} key={i}>
-                        <CardMedia
-                            component="img"
-                            height="140"
-                            image={`${item.url}?w=248&fit=crop&auto=format`}
+                        <CardHeader
+                            sx={{
+                                alignItems: "end",
+                                height: 130,
+                                color: 'white', 
+                                background: `linear-gradient(rgba(125, 125, 125, 0.5),rgba(0, 0, 0, 0.5)), url(${expert.img}&w=348&h=200&auto=format)`,
+                                backgroundSize: 'cover'
+                            }}
+                            avatar={
+                                <Avatar src={expert.avatar} />
+                            }
+                            title={expert.name}
+                            subheader={<Rating value={expert.rating} precision={0.1} readOnly />}
                         />
-                        <CardContent>
-                            <Typography gutterBottom variant="h5" component="div">
-                                
-                            </Typography>
-                            <Typography variant="body2" color="text.secondary">
-                                Lizards are a widespread group of squamate reptiles, with over 6,000
-                                species, ranging across all continents except Antarctica
-                            </Typography>
-                        </CardContent>
                         <CardActions>
-                            <Button size="small">Share</Button>
-                            <Button size="small">Learn More</Button>
+                            <IconButton size="small"><Phone /></IconButton>
+                            <IconButton size="small"><Email /></IconButton>
+                            <IconButton><Share /></IconButton>
                         </CardActions>
                     </Card>
                 ))}

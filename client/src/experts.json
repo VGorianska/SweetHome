@@ -2,8 +2,9 @@
     {
         "name": "Mr. Mustermann",
         "type": "architects",
-        "img": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8",
-        "rating": 4.5,
+        "avatar": "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
+        "img": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&w=348&h=200&auto=format",
+        "rating": 4.3,
         "location": "Hamburg",
         "phonenumber": "+490880800458",
         "e-mail": "mustermann@gmail.com"
