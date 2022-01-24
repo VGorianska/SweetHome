@@ -13,7 +13,7 @@ import Button from '@mui/material/Button';
 import { Typography } from '@mui/material';
 import Stack from '@mui/material/Stack';
 import Checkbox from '@mui/material/Checkbox';
-
+import { useNavigate } from "react-router-dom";
 
 
 const ValidationTextField = styled(TextField)({
@@ -32,6 +32,9 @@ const ValidationTextField = styled(TextField)({
 });
 
 export default function Login() {
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [checked, setChecked] = React.useState(true);
+  const navigate = useNavigate();
   const [values, setValues] = React.useState({
     amount: '',
     password: '',
@@ -54,10 +57,14 @@ export default function Login() {
     event.preventDefault();
   };
 
-  const [checked, setChecked] = React.useState(true);
 
   const handlechange = (event) => {
     setChecked(event.target.checked);
+  };
+
+  const handleMenuItemClick = (url) => {
+    navigate(url, { replace: true });
+    setAnchorEl(null);
   };
 
   return (
@@ -100,13 +107,13 @@ export default function Login() {
             label="Password"
           />
         </FormControl>
-        <Button sx={{ width: 90, alignItems: 'center', m: '30px auto' }} variant="contained" endIcon={<Send />} onClick={() => location="/"}>
+        <Button sx={{ width: 90, alignItems: 'center', m: '30px auto' }} variant="contained" endIcon={<Send />} onClick={() => handleMenuItemClick('/')}>
           Send
         </Button>
       </Box>
-      <Stack direction="row" spacing={2}>
-        <div><Checkbox checked={checked} onChange={handlechange} inputProps={{ 'aria-label': 'controlled' }} /><Typography>Remember me</Typography></div>
-        <div></div>
+      <Stack direction="row" spacing={2} justifyContent={"space-between"}>
+        <div><Typography sx={{ fontSize: 12 }}><Checkbox checked={checked} onChange={handlechange} inputProps={{ 'aria-label': 'controlled' }} />Remember me</Typography></div>
+        <div><Button variant="outlined" onClick={() => handleMenuItemClick('/registration')} >Registration</Button></div>
       </Stack>
     </Container>
   )
