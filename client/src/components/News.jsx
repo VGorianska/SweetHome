@@ -9,13 +9,21 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { red } from '@mui/material/colors';
 import { Star, Share } from '@mui/icons-material';
-import { Stack } from '@mui/material';
+import { Stack, Button } from '@mui/material';
 import Pagination from '@mui/material/Pagination';
 import articles from "../articles.json";
+import { useNavigate } from "react-router-dom";
 
 
 
 export default function News() {
+    const navigate = useNavigate();
+
+    const selectedIndex = location.pathname;
+    const handleMenuItemClick = (url) => {
+        navigate(url, { replace: true });
+        
+    };
     return (
         <Stack spacing={2} sx={{ background: '#dde0e7', padding: 0, m: '70px 0' }}>
             {articles.map((article, i) => <Card sx={{ maxWidth: 345 }} key={i}>
@@ -36,7 +44,7 @@ export default function News() {
                 />
                 <CardContent>
                     <Typography variant="body2" color="text.secondary">
-                    {article.teaser}
+                        {article.teaser}
                     </Typography>
                 </CardContent>
                 <CardActions disableSpacing>
@@ -46,13 +54,13 @@ export default function News() {
                     <IconButton aria-label="share">
                         <Share />
                     </IconButton>
-
+                    <Button variant="contained" sx={{ ml: "auto" }} onClick={() => handleMenuItemClick('/news/1')} selected={selectedIndex === '/news/1'}>Read more</Button>
                 </CardActions>
 
             </Card>
             )}
-            
-           
+
+
             <Pagination count={10} variant="outlined" shape="rounded" />
         </Stack>
     );

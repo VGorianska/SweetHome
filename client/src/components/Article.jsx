@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useParams } from "react-router-dom";
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
@@ -10,9 +11,7 @@ import Typography from '@mui/material/Typography';
 import { red } from '@mui/material/colors';
 import { Star, Share } from '@mui/icons-material';
 import { Stack } from '@mui/material';
-import Pagination from '@mui/material/Pagination';
 import articles from "../articles.json";
-import { useParams } from "react-router-dom";
 
 
 
@@ -39,11 +38,7 @@ export default function Article() {
                     height="194"
                     image={article.img}
                 />
-                <CardContent>
-                    <Typography variant="body2" color="text.secondary">
-                        {article.contents.map((item, i) => <p key={i}>{item}</p>)}
-                    </Typography>
-                </CardContent>
+                {article.contents.map((item, i) => <CardContent key={i}><Typography variant="body2" color="text.secondary">{item}</Typography></CardContent>)}
                 <CardActions disableSpacing>
                     <IconButton aria-label="add to favorites">
                         <Star />

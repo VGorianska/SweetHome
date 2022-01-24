@@ -10,12 +10,55 @@
         "mail": "mustermann@gmail.com"
     },
     {
+        "name": "Klaus Mann",
+        "type": "architects",
+        "avatar": "https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
+        "img": "https://images.unsplash.com/photo-1542621334-a254cf47733d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        "rating": 3.7,
+        "location": "Berlin",
+        "phonenumber": "+490568400458",
+        "mail": "Klaus@gmail.com"
+    },
+    {
+        "name": "Mrs Doe",
+        "type": "architects",
+        "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+        "img": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+        "rating": 3.3,
+        "location": "Hamburg",
+        "phonenumber": "+490880374556",
+        "mail": "Doe@gmail.com"
+    },
+    
+    
+    {
+        "name": "InteriorCompany",
+        "type": "interior_architects",
+        "avatar": "https://images.unsplash.com/photo-1603201667141-5a2d4c673378?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1496&q=80",
+        "img": "https://images.unsplash.com/photo-1540518614846-7eded433c457?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1457&q=80",
+        "rating": 4.9,
+        "location": "Munich",
+        "phonenumber": "+41457380258",
+        "mail": "InteriorCompany@gmail.com"
+    },
+    {
         "name": "Mrs. Musterfrau",
         "type": "interior_architects",
+        "avatar": "https://images.unsplash.com/photo-1628890923662-2cb23c2e0cfe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        "img": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        "rating": 2.7,
+        "location": "Berlin",
+        "phonenumber": "+41873450252",
+        "mail": "musterfrau@gmail.com"
+    },
+    {
+        "name": "Mr. Muster",
+        "type": "interior_architects",
+        "avatar": "https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
         "img": "https://images.unsplash.com/photo-1564078516393-cf04bd966897?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8",
-        "rating": 4.5,
+        "rating": 3.5,
         "location": "Munich",
-        "phonenumber": "+419684580258",
+        "phonenumber": "+419684546593",
         "mail": "musterfrau@gmail.com"
     },
     {

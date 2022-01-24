@@ -75,7 +75,7 @@ export default function Login() {
           label="E-mail"
           required
           variant="outlined"
-          defaultValue="Success"
+          defaultValue="mustermann@gmail.com"
           id="validation-outlined-input"
         />
         <FormControl variant="outlined" sx={{ mt: '30px' }}>
@@ -100,7 +100,7 @@ export default function Login() {
             label="Password"
           />
         </FormControl>
-        <Button sx={{ width: 90, alignItems: 'center', m: '30px auto' }} variant="contained" endIcon={<Send />}>
+        <Button sx={{ width: 90, alignItems: 'center', m: '30px auto' }} variant="contained" endIcon={<Send />} onClick={() => location="/"}>
           Send
         </Button>
       </Box>
