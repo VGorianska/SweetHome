@@ -2,7 +2,6 @@ import * as React from 'react';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import IconButton from '@mui/material/IconButton';
-import StarBorderIcon from '@mui/icons-material/StarBorder';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 import { Container } from '@mui/material';
 import Tabs, { tabsClasses } from '@mui/material/Tabs';
@@ -11,8 +10,8 @@ import Box from '@mui/material/Box';
 import roomPhotos from '../roomPhotos.json';
 import StarIcon from '@mui/icons-material/Star';
 
-export default function MainImgList() {
-    const [currentTab, setCurrentTab] = React.useState("livingroom");
+export default function Favourites() {
+    const [currentTab, setCurrentTab] = React.useState("favourites");
     const [photos, setPhotos] = React.useState(roomPhotos);
 
     const handleRoomChange = (event, newValue) => {
@@ -44,25 +43,16 @@ export default function MainImgList() {
                         }
                     }}
                 >
-                    <Tab label="Living Rooms" value="livingroom" />
-                    <Tab label="Kitchens" value="kitchen" />
-                    <Tab label="Bedrooms" value="bedroom" />
-                    <Tab label="Bathrooms" value="bathroom" />
-                    <Tab label="Kid's Rooms" value="kidsroom" />
-                    <Tab label="Hallways" value="hallway" />
-                    <Tab label="Workspaces" value="workspace" />
-                    <Tab label="Dressingrooms" value="dressingroom" />
-                    <Tab label="Stairs" value="stairs" />
-                    <Tab label="Basements" value="basement" />
-                    <Tab label="Garages" value="garage" />
-                    <Tab label="Fitness Rooms" value="fitnessroom" />
-                    <Tab label="Hauses" value="houses" />
+                    <Tab label="All Favourites" value="favourites" />
+                    {/* <Tab label="+" value="allFavourites" /> */}
+
+
                 </Tabs>
             </Box>
 
             <ImageList cols={2} gap={4}>
                 {photos
-                    .filter((roomPhoto) => roomPhoto.type == currentTab)
+                    .filter((photo) => photo.isFavourite === true)
                     .map((item, i) => (
                         <ImageListItem key={i}>
                             <ImageListItemBar sx={{ background: 'rgba(0, 0, 0, 0.1)' }}
@@ -73,7 +63,7 @@ export default function MainImgList() {
                                         sx={{ color: 'white' }}
                                         aria-label={`star ${item.title}`}
                                     >
-                                        {item.isFavourite ? <StarIcon /> : <StarBorderIcon />}
+                                        <StarIcon />
                                     </IconButton>
                                 }
                                 actionPosition="right"

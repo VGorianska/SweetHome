@@ -14,7 +14,7 @@ import News from "./components/News";
 import Login from "./components/Login";
 import Article from "./components/Article";
 import Registration from "./components/Registration"
-
+import Favourites from "./components/Favourites";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -30,6 +30,7 @@ ReactDOM.render(
             <Route path="/login" element={<Login />} />
             <Route path="/news/:article" element={<Article />} />
             <Route path="/registration" element={<Registration />} />
+            <Route path="/favourites" element={<Favourites />} />
             <Route path='*' element={<NotFound />} />
           </Routes>
         </Container>
