@@ -15,6 +15,10 @@ import Stack from '@mui/material/Stack';
 import Checkbox from '@mui/material/Checkbox';
 import Avatar from '@mui/material/Avatar';
 import { useNavigate } from "react-router-dom";
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormLabel from '@mui/material/FormLabel';
 
 const Input = styled('input')({
     display: 'none',
@@ -125,7 +129,19 @@ export default function Registration() {
                     </label>
                     <Avatar />
                 </Stack>
-                <Button sx={{ alignItems: 'center', m: '30px auto' }} variant="contained" endIcon={<Send />} onClick={() => location = "/"}>
+                <FormControl>
+      <FormLabel id="demo-radio-buttons-group-label">Gender</FormLabel>
+      <RadioGroup
+        aria-labelledby="demo-radio-buttons-group-label"
+        defaultValue="female"
+        name="radio-buttons-group"
+      >
+        <FormControlLabel value="female" control={<Radio />} label="Female" />
+        <FormControlLabel value="male" control={<Radio />} label="Male" />
+        <FormControlLabel value="other" control={<Radio />} label="Other" />
+      </RadioGroup>
+    </FormControl>
+                <Button sx={{ alignItems: 'center', m: '20px auto' }} variant="contained" endIcon={<Send />} onClick={() => location = "/"}>
                     Register
                 </Button>
             </Box>
