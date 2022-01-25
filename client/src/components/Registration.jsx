@@ -16,8 +16,6 @@ import Checkbox from '@mui/material/Checkbox';
 import Avatar from '@mui/material/Avatar';
 import { useNavigate } from "react-router-dom";
 
-
-
 const Input = styled('input')({
     display: 'none',
 });
