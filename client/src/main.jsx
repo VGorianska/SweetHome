@@ -11,6 +11,7 @@ import NotFound from "./components/NotFound";
 import ImgContainer from "./components/MainImgList";
 import Experts from "./components/Experts";
 import News from "./components/News";
+import Favourites from "./components/Favourites";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -23,6 +24,7 @@ ReactDOM.render(
             <Route path="/" element={<ImgContainer />} />
             <Route path="/experts" element={<Experts />} />
             <Route path="/news" element={<News />} />
+            <Route path="/favourites" element={<Favourites />} />
             <Route path='*' element={<NotFound />} />
           </Routes>
         </Container>
