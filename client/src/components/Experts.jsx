@@ -50,7 +50,7 @@ export default function Experts() {
             {experts
                 .filter((expert) => expert.type == currentTab)
                 .map((expert, i) => (
-                    <Card sx={{ maxWidth: 345 }} key={i}>
+                    <Card sx={{ maxWidth: 345, mb: 2 }} key={i}>
                         <CardHeader
                             sx={{
                                 alignItems: "end",

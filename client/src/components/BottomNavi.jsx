@@ -44,9 +44,9 @@ export default function BottomNavi() {
         icon={<Star sx={{ fontSize: '2rem' }} />}
       />
       <BottomNavigationAction
-        onClick={() => handleMenuItemClick('/account')} 
-        label="Account"
-        value="/account"
+        onClick={() => handleMenuItemClick('/login')} 
+        label="Login"
+        value="/login"
         icon={<AccountCircle sx={{ fontSize: '2rem' }} />} />
     </BottomNavigation>
   );

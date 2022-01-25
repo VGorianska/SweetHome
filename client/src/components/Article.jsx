@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useParams } from "react-router-dom";
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
@@ -9,24 +10,19 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { red } from '@mui/material/colors';
 import { Star, Share } from '@mui/icons-material';
-import { Stack, Button } from '@mui/material';
-import Pagination from '@mui/material/Pagination';
+import { Stack } from '@mui/material';
 import articles from "../articles.json";
-import { useNavigate } from "react-router-dom";
 
 
 
-export default function News() {
-    const navigate = useNavigate();
 
-    const selectedIndex = location.pathname;
-    const handleMenuItemClick = (url) => {
-        navigate(url, { replace: true });
-        
-    };
+export default function Article() {
+    let params = useParams();
+    console.log(params)
+    const article = articles.find((item) => item.id == params.article)
     return (
         <Stack spacing={2} sx={{ background: '#dde0e7', padding: 0, m: '70px 0' }}>
-            {articles.map((article, i) => <Card sx={{ maxWidth: 345 }} key={i}>
+            <Card sx={{ maxWidth: 345 }}>
                 <CardHeader
                     avatar={
                         <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
@@ -42,11 +38,7 @@ export default function News() {
                     height="194"
                     image={article.img}
                 />
-                <CardContent>
-                    <Typography variant="body2" color="text.secondary">
-                        {article.teaser}
-                    </Typography>
-                </CardContent>
+                {article.contents.map((item, i) => <CardContent key={i}><Typography variant="body2" color="text.secondary">{item}</Typography></CardContent>)}
                 <CardActions disableSpacing>
                     <IconButton aria-label="add to favorites">
                         <Star />
@@ -54,14 +46,10 @@ export default function News() {
                     <IconButton aria-label="share">
                         <Share />
                     </IconButton>
-                    <Button variant="contained" sx={{ ml: "auto" }} onClick={() => handleMenuItemClick('/news/1')} selected={selectedIndex === '/news/1'}>Read more</Button>
+
                 </CardActions>
 
             </Card>
-            )}
-
-
-            <Pagination count={10} variant="outlined" shape="rounded" />
         </Stack>
     );
 }

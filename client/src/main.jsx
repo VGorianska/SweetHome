@@ -11,6 +11,10 @@ import NotFound from "./components/NotFound";
 import ImgContainer from "./components/MainImgList";
 import Experts from "./components/Experts";
 import News from "./components/News";
+import Login from "./components/Login";
+import Article from "./components/Article";
+import Registration from "./components/Registration"
+
 
 ReactDOM.render(
   <React.StrictMode>
@@ -23,6 +27,9 @@ ReactDOM.render(
             <Route path="/" element={<ImgContainer />} />
             <Route path="/experts" element={<Experts />} />
             <Route path="/news" element={<News />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/news/:article" element={<Article />} />
+            <Route path="/registration" element={<Registration />} />
             <Route path='*' element={<NotFound />} />
           </Routes>
         </Container>
