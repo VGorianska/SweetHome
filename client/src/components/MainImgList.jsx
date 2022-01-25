@@ -2,18 +2,36 @@ import * as React from 'react';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import IconButton from '@mui/material/IconButton';
-import StarBorderIcon from '@mui/icons-material/StarBorder';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 import { Container } from '@mui/material';
 import Tabs, { tabsClasses } from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import roomPhotos from '../roomPhotos.json';
-import StarIcon from '@mui/icons-material/Star';
+import { Star, StarBorder, HighlightOff } from '@mui/icons-material';
+import Dialog from '@mui/material/Dialog';
+import DialogTitle from '@mui/material/DialogTitle';
+import DialogContent from '@mui/material/DialogContent';
+import Slide from '@mui/material/Slide';
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+    return <Slide direction="up" ref={ref} {...props} />;
+});
 
 export default function MainImgList() {
     const [currentTab, setCurrentTab] = React.useState("livingroom");
     const [photos, setPhotos] = React.useState(roomPhotos);
+    const [open, setOpen] = React.useState(false);
+    const [openedImg, setOpenedImg] = React.useState();
+
+    const handleClickOpen = (imgUrl) => {
+        setOpenedImg(imgUrl)
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
 
     const handleRoomChange = (event, newValue) => {
 
@@ -73,18 +91,41 @@ export default function MainImgList() {
                                         sx={{ color: 'white' }}
                                         aria-label={`star ${item.title}`}
                                     >
-                                        {item.isFavourite ? <StarIcon /> : <StarBorderIcon />}
+                                        {item.isFavourite ? <Star /> : <StarBorder />}
                                     </IconButton>
                                 }
                                 actionPosition="right"
                             />
                             <img
+                                onClick={() => handleClickOpen(item.url)}
                                 src={`${item.url}?w=248&fit=crop&auto=format`}
                                 loading="eager"
                             />
                         </ImageListItem>
                     ))}
             </ImageList>
+
+            <Dialog
+                open={open}
+                TransitionComponent={Transition}
+                keepMounted
+                onClose={handleClose}
+                aria-describedby="alert-dialog-slide-description"
+                sx={{ backgroundColor: "black" }}
+                fullScreen={true}
+            >
+                <DialogTitle sx={{ backgroundColor: "black" }}>
+                    <IconButton onClick={handleClose} sx={{ ml: "auto" }}>
+                        <HighlightOff sx={{ color: "white" }} />
+                    </IconButton>
+                </DialogTitle>
+                <DialogContent sx={{ m: 0, backgroundColor: "black"}}>
+                    <img
+                        src={`${openedImg}?w=1200&fit=crop&auto=format`}
+                        style={{ width: "100%" }}
+                    />
+                </DialogContent>
+            </Dialog>
         </Container>
     )
 }
