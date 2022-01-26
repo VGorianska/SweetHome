@@ -1,18 +1,26 @@
 import * as React from 'react';
-import ImageList from '@mui/material/ImageList';
-import ImageListItem from '@mui/material/ImageListItem';
-import IconButton from '@mui/material/IconButton';
-import ImageListItemBar from '@mui/material/ImageListItemBar';
-import { Container } from '@mui/material';
-import Tabs, { tabsClasses } from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Box from '@mui/material/Box';
+import { ImageList, ImageListItem, IconButton, ImageListItemBar, Container, Tabs, tabsClasses, Tab, Box, Slide, Dialog, DialogTitle, DialogContent } from '@mui/material';
 import roomPhotos from '../roomPhotos.json';
-import StarIcon from '@mui/icons-material/Star';
+import {Star, HighlightOff} from '@mui/icons-material';
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+    return <Slide direction="up" ref={ref} {...props} />;
+});
 
 export default function Favourites() {
     const [currentTab, setCurrentTab] = React.useState("favourites");
     const [photos, setPhotos] = React.useState(roomPhotos);
+    const [open, setOpen] = React.useState(false);
+    const [openedImg, setOpenedImg] = React.useState();
+
+    const handleClickOpen = (imgUrl) => {
+        setOpenedImg(imgUrl)
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
 
     const handleRoomChange = (event, newValue) => {
 
@@ -63,18 +71,40 @@ export default function Favourites() {
                                         sx={{ color: 'white' }}
                                         aria-label={`star ${item.title}`}
                                     >
-                                        <StarIcon />
+                                        <Star />
                                     </IconButton>
                                 }
                                 actionPosition="right"
                             />
                             <img
+                                onClick={() => handleClickOpen(item.url)}
                                 src={`${item.url}?w=248&fit=crop&auto=format`}
                                 loading="eager"
                             />
                         </ImageListItem>
                     ))}
             </ImageList>
+            <Dialog
+                open={open}
+                TransitionComponent={Transition}
+                keepMounted
+                onClose={handleClose}
+                aria-describedby="alert-dialog-slide-description"
+                sx={{ backgroundColor: "black" }}
+                fullScreen={true}
+            >
+                <DialogTitle sx={{ backgroundColor: "black" }}>
+                    <IconButton onClick={handleClose} sx={{ ml: "auto" }}>
+                        <HighlightOff sx={{ color: "white" }} />
+                    </IconButton>
+                </DialogTitle>
+                <DialogContent sx={{ m: 0, backgroundColor: "black"}}>
+                    <img
+                        src={`${openedImg}?w=1200&fit=crop&auto=format`}
+                        style={{ width: "100%" }}
+                    />
+                </DialogContent>
+            </Dialog>
         </Container>
     )
 }
