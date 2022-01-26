@@ -1,18 +1,7 @@
 import * as React from 'react';
-import ImageList from '@mui/material/ImageList';
-import ImageListItem from '@mui/material/ImageListItem';
-import IconButton from '@mui/material/IconButton';
-import ImageListItemBar from '@mui/material/ImageListItemBar';
-import { Container } from '@mui/material';
-import Tabs, { tabsClasses } from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Box from '@mui/material/Box';
+import { ImageList, ImageListItem, IconButton, ImageListItemBar, Container, Tabs, Tab, tabsClasses, Box, Dialog, DialogTitle, DialogContent, Slide } from '@mui/material';
 import roomPhotos from '../roomPhotos.json';
 import { Star, StarBorder, HighlightOff } from '@mui/icons-material';
-import Dialog from '@mui/material/Dialog';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
-import Slide from '@mui/material/Slide';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;

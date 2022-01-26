@@ -29,14 +29,52 @@
         "phonenumber": "+490880374556",
         "mail": "Doe@gmail.com"
     },
-    
-    
+    {
+        "name": "be_plan Architektur GmbH",
+        "type": "architects",
+        "avatar": "https://images.unsplash.com/photo-1520283818086-3f6dffb019c0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+        "img": "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        "rating": 4.9,
+        "location": "Munich",
+        "phonenumber": "+490006405460",
+        "mail": "be_plan@gmail.com"
+    },
+    {
+        "name": "co.architects",
+        "type": "architects",
+        "avatar": "https://images.unsplash.com/photo-1544724107-6d5c4caaff30?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1467&q=80",
+        "img": "https://images.unsplash.com/photo-1523217582562-09d0def993a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
+        "rating": 4.3,
+        "location": "Berlin",
+        "phonenumber": "+493438732521",
+        "mail": "co.architects@gmail.com"
+    },
+    {
+        "name": "arcs architekt",
+        "type": "architects",
+        "avatar": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Njl8fGF2YXRhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+        "img": "https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        "rating": 4,
+        "location": "Ulm",
+        "phonenumber": "+494538676234",
+        "mail": "arcs@gmail.com"
+    },
+    {
+        "name": "ALEXANDRA KIENL · ARCHITEKTUR",
+        "type": "architects",
+        "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        "img": "https://images.unsplash.com/photo-1618259466883-ee949921d0a8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        "rating": 4.9,
+        "location": "81371 Munich",
+        "phonenumber": "+494585472458",
+        "mail": "kienl@gmail.com"
+    },
     {
         "name": "InteriorCompany",
         "type": "interior_architects",
         "avatar": "https://images.unsplash.com/photo-1603201667141-5a2d4c673378?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1496&q=80",
         "img": "https://images.unsplash.com/photo-1540518614846-7eded433c457?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1457&q=80",
-        "rating": 4.9,
+        "rating": 4.7,
         "location": "Munich",
         "phonenumber": "+41457380258",
         "mail": "InteriorCompany@gmail.com"
@@ -62,21 +100,164 @@
         "mail": "musterfrau@gmail.com"
     },
     {
+        "name": "Interieur Haus",
+        "type": "interior_architects",
+        "avatar": "https://images.unsplash.com/photo-1604426633861-11b2faead63c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
+        "img": "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        "rating": 4,
+        "location": "82279 Eching am Ammersee",
+        "phonenumber": "+419457665246",
+        "mail": "interieur_haus@gmail.com"
+    },
+    {
+        "name": "Interior Design Solutions",
+        "type": "interior_architects",
+        "avatar": "https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
+        "img": "https://images.unsplash.com/photo-1618219944342-824e40a13285?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80",
+        "rating": 4.8,
+        "location": "81667 München",
+        "phonenumber": "+419004603036",
+        "mail": "design_solutions@gmail.com"
+    },
+    {
+        "name": "Susanne Rissaun - Interior Design",
+        "type": "interior_architects",
+        "avatar": "https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=686&q=80",
+        "img": "https://images.unsplash.com/photo-1537726235470-8504e3beef77?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        "rating": 4.6,
+        "location": "81667 München",
+        "phonenumber": "+4193476453123",
+        "mail": "rissaun@gmail.com"
+    },
+    {
         "name": "Construction GMBH",
         "type": "construction_companies",
-        "img": "https://images.unsplash.com/photo-1592250892572-37524c069b60?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8",
+        "avatar": "https://images.unsplash.com/photo-1555952517-2e8e729e0b44?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
+        "img": "https://images.unsplash.com/photo-1567954970774-58d6aa6c50dc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80",
         "rating": 4.7,
         "location": "Munich",
         "phonenumber": "+497486792074",
         "mail": "construction@gmail.com"
     },
     {
+        "name": "MannGMBH",
+        "type": "construction_companies",
+        "avatar": "https://images.unsplash.com/photo-1545996124-0501ebae84d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
+        "img": "https://images.unsplash.com/photo-1509453721491-c3af5961df76?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80",
+        "rating": 4.2,
+        "location": "Munich",
+        "phonenumber": "+497486792074",
+        "mail": "manngmbh@gmail.com"
+    },
+    {
+        "name": "Construction GMBH",
+        "type": "construction_companies",
+        "avatar": "https://images.unsplash.com/photo-1552058544-f2b08422138a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=699&q=80",
+        "img": "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        "rating": 3.7,
+        "location": "Munich",
+        "phonenumber": "+497486792074",
+        "mail": "construction@gmail.com"
+    },
+    {
+        "name": "Bauunternehmen GmbH",
+        "type": "construction_companies",
+        "avatar": "https://images.unsplash.com/photo-1578916045370-25461e0cf390?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=699&q=80",
+        "img": "https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1397&q=80",
+        "rating": 3.2,
+        "location": "83104 Tuntenhausen",
+        "phonenumber": "+4195648579876",
+        "mail": "bauunternehmen@gmail.com"
+    },
+    {
+        "name": "th construction",
+        "type": "construction_companies",
+        "avatar": "https://images.unsplash.com/photo-1578916045370-25461e0cf390?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=699&q=80",
+        "img": "https://images.unsplash.com/photo-1592250892572-37524c069b60?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8",
+        "rating": 4.6,
+        "location": "kramsach 6233 Austria",
+        "phonenumber": "+419000198455",
+        "mail": "th_construction@gmail.com"
+    },
+    {
+        "name": "Home Builders",
+        "type": "construction_companies",
+        "avatar": "https://images.unsplash.com/photo-1546820389-44d77e1f3b31?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
+        "img": "https://images.unsplash.com/photo-1575230167650-dce335edc7f4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1474&q=80",
+        "rating": 2.8,
+        "location": "Berlin",
+        "phonenumber": "+419345876522",
+        "mail": "home_builders@gmail.com"
+    },
+    {
+        "name": "Soulgarden GmbH by Alexandra",
+        "type": "landscape_designers",
+        "avatar": "https://images.unsplash.com/photo-1609708993734-29d07306bdc7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+        "img": "https://images.unsplash.com/photo-1615059713616-2a243b936f8f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+        "rating": 4.8,
+        "location": "82327 Tutzing",
+        "phonenumber": "+49836782222",
+        "mail": "landscape_alexandra@gmail.com"
+    },
+    {
         "name": "Landscape GMBH",
         "type": "landscape_designers",
-        "img": "https://images.unsplash.com/photo-1432958576632-8a39f6b97dc7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8",
-        "rating": 4.8,
+        "avatar": "https://images.unsplash.com/photo-1620122303020-87ec826cf70d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+        "img": "https://images.unsplash.com/photo-1634428927683-aa28ff463204?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
+        "rating": 4.2,
         "location": "Humburg",
         "phonenumber": "+498367828935",
         "mail": "landscape_designers@gmail.com"
+    },
+    {
+        "name": "Max Gartenbau",
+        "type": "landscape_designers",
+        "avatar": "https://images.unsplash.com/photo-1620122303020-87ec826cf70d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+        "img": "https://images.unsplash.com/photo-1432958576632-8a39f6b97dc7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8",
+        "rating": 4.7,
+        "location": "85649 Brunnthal",
+        "phonenumber": "+498883678555",
+        "mail": "max_gartenbau@gmail.com"
+    },
+    {
+        "name": "Greenmann",
+        "type": "landscape_designers",
+        "avatar": "https://images.unsplash.com/photo-1599256621730-535171e28e50?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=671&q=80",
+        "img": "https://images.unsplash.com/photo-1595387426256-cc153122a6f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        "rating": 4,
+        "location": "81827 München",
+        "phonenumber": "+4199989543839",
+        "mail": "greenmann@gmail.com"
+    },
+    {
+        "name": "Flower",
+        "type": "landscape_designers",
+        "avatar": "https://images.unsplash.com/photo-1541519481457-763224276691?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+        "img": "https://images.unsplash.com/photo-1520302630591-fd1c66edc19d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        "rating": 4.5,
+        "location": "82110 Germering",
+        "phonenumber": "+4193640985223",
+        "mail": "flower@gmail.com"
+    },
+    {
+        "name": "Gartendesign Christy von Burke",
+        "type": "landscape_designers",
+        "avatar": "https://images.unsplash.com/photo-1481824429379-07aa5e5b0739?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=696&q=80",
+        "img": "https://images.unsplash.com/photo-1595387426463-bef727e35bb3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        "rating": 4.3,
+        "location": "85635 Höhenkirchen",
+        "phonenumber": "+419990223441",
+        "mail": "burke@gmail.com"
+    },
+    {
+        "name": "Nalla Salamon",
+        "type": "landscape_designers",
+        "avatar": "https://images.unsplash.com/photo-1551714442-96fa9b1f57af?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+        "img": "https://images.unsplash.com/photo-1446071103084-c257b5f70672?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=684&q=80",
+        "rating": 4.7,
+        "location": "81667 München",
+        "phonenumber": "+419455647463",
+        "mail": "salamon@gmail.com"
     }
+    
 ]
