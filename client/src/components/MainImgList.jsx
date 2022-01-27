@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { ImageList, ImageListItem, IconButton, ImageListItemBar, Container, Tabs, Tab, tabsClasses, Box, Dialog, DialogTitle, DialogContent, Slide } from '@mui/material';
-import roomPhotos from '../roomPhotos.json';
 import { Star, StarBorder, HighlightOff } from '@mui/icons-material';
+import { findPhotos, getFavourites, setFavourites } from '../lib/data.js';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
@@ -9,10 +9,11 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 export default function MainImgList() {
     const [currentTab, setCurrentTab] = React.useState("livingroom");
-    const [photos, setPhotos] = React.useState(roomPhotos);
+    const photos = findPhotos({ type: currentTab });
+    const [favouritesState, setFavouritesState] = React.useState(getFavourites());
     const [open, setOpen] = React.useState(false);
     const [openedImg, setOpenedImg] = React.useState();
-
+    console.log('111',favouritesState)
     const handleClickOpen = (imgUrl) => {
         setOpenedImg(imgUrl)
         setOpen(true);
@@ -23,19 +24,21 @@ export default function MainImgList() {
     };
 
     const handleRoomChange = (event, newValue) => {
-
         setCurrentTab(newValue);
     };
 
     function toggleFavourite(imageId) {
-        const thePhotos = photos.map((photo) => {
-            if (photo.id === imageId) {
-                photo.isFavourite = !photo.isFavourite
-            }
-            return photo
-        })
-        setPhotos(thePhotos)
+        const i = favouritesState.indexOf(imageId)
+        const newFavourites = [...favouritesState]
+        if (i === -1) {
+            newFavourites.push(imageId)
+        } else {
+            newFavourites.splice(i, 1)
+        }
+        setFavourites(newFavourites)
+        setFavouritesState(newFavourites)
     }
+
     return (
         <Container sx={{ background: '#dde0e7', padding: 0, m: '60px 0' }}>
             <Box sx={{ flexGrow: 1, width: '100%', height: '40px', bgcolor: 'inherit', padding: 0, margin: 0 }}>
@@ -69,7 +72,6 @@ export default function MainImgList() {
 
             <ImageList cols={2} gap={4}>
                 {photos
-                    .filter((roomPhoto) => roomPhoto.type == currentTab)
                     .map((item, i) => (
                         <ImageListItem key={i}>
                             <ImageListItemBar sx={{ background: 'rgba(0, 0, 0, 0.1)' }}
@@ -80,7 +82,7 @@ export default function MainImgList() {
                                         sx={{ color: 'white' }}
                                         aria-label={`star ${item.title}`}
                                     >
-                                        {item.isFavourite ? <Star /> : <StarBorder />}
+                                        {favouritesState.includes(item.id) ? <Star /> : <StarBorder />}
                                     </IconButton>
                                 }
                                 actionPosition="right"
@@ -108,7 +110,7 @@ export default function MainImgList() {
                         <HighlightOff sx={{ color: "white" }} />
                     </IconButton>
                 </DialogTitle>
-                <DialogContent sx={{ m: 0, backgroundColor: "black"}}>
+                <DialogContent sx={{ m: 0, backgroundColor: "black" }}>
                     <img
                         src={`${openedImg}?w=1200&fit=crop&auto=format`}
                         style={{ width: "100%" }}

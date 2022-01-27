@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { ImageList, ImageListItem, IconButton, ImageListItemBar, Container, Tabs, tabsClasses, Tab, Box, Slide, Dialog, DialogTitle, DialogContent } from '@mui/material';
-import roomPhotos from '../roomPhotos.json';
 import {Star, HighlightOff} from '@mui/icons-material';
+import { findPhotos, getFavourites, setFavourites } from '../lib/data.js';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
@@ -9,9 +9,10 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 export default function Favourites() {
     const [currentTab, setCurrentTab] = React.useState("favourites");
-    const [photos, setPhotos] = React.useState(roomPhotos);
+    const photos = findPhotos();   
     const [open, setOpen] = React.useState(false);
     const [openedImg, setOpenedImg] = React.useState();
+    const [favouritesState, setFavouritesState] = React.useState(getFavourites());
 
     const handleClickOpen = (imgUrl) => {
         setOpenedImg(imgUrl)
@@ -23,18 +24,19 @@ export default function Favourites() {
     };
 
     const handleRoomChange = (event, newValue) => {
-
         setCurrentTab(newValue);
     };
 
     function toggleFavourite(imageId) {
-        const thePhotos = photos.map((photo) => {
-            if (photo.id === imageId) {
-                photo.isFavourite = !photo.isFavourite
-            }
-            return photo
-        })
-        setPhotos(thePhotos)
+        const i = favouritesState.indexOf(imageId)
+        const newFavourites = [...favouritesState]
+        if (i === -1) {
+            newFavourites.push(imageId)
+        } else {
+            newFavourites.splice(i, 1)
+        }
+        setFavourites(newFavourites)
+        setFavouritesState(newFavourites)
     }
     return (
         <Container sx={{ background: '#dde0e7', padding: 0, m: '60px 0' }}>
@@ -52,15 +54,13 @@ export default function Favourites() {
                     }}
                 >
                     <Tab label="All Favourites" value="favourites" />
-                    {/* <Tab label="+" value="allFavourites" /> */}
-
-
+                    
                 </Tabs>
             </Box>
 
             <ImageList cols={2} gap={4}>
                 {photos
-                    .filter((photo) => photo.isFavourite === true)
+                    .filter((photo) => favouritesState.includes(photo.id))
                     .map((item, i) => (
                         <ImageListItem key={i}>
                             <ImageListItemBar sx={{ background: 'rgba(0, 0, 0, 0.1)' }}
