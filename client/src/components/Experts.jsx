@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Tab, Box, Card, CardActions, Avatar, CardHeader, IconButton, Rating, Tabs, tabsClasses, Container, Typography } from '@mui/material';
-import { Phone, Email, LocationOn } from '@mui/icons-material';
+import { Phone, Email, LocationOn, Share } from '@mui/icons-material';
 import experts from '../experts.json';
 
 export default function Experts() {
@@ -53,13 +53,13 @@ export default function Experts() {
                             }
                             title={expert.name}
                             subheader={<Rating value={expert.rating} precision={0.1} readOnly />}
-
                         />
                         <CardActions>
                             <LocationOn />
                             <Typography sx={{ fontSize: 14, marginRight: 'auto' }} color="text.secondary" gutterBottom>
                                 {expert.location}
                             </Typography>
+                            <IconButton><Share /></IconButton>
                             <IconButton onClick={() => location = `callto: ${expert.phonenumber}`}><Phone /></IconButton>
                             <IconButton onClick={() => location = `mailto: ${expert.mail}`}><Email /></IconButton>
                         </CardActions>
