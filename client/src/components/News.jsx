@@ -26,7 +26,7 @@ export default function News() {
     };
     return (
         <Stack spacing={2} sx={{ background: '#dde0e7', padding: 0, m: '70px 0' }}>
-            {articles.map((article, i) => <Card sx={{ maxWidth: 345 }} key={i}>
+            {articles.map((article, i) => <Card key={i}>
                 <CardHeader
                     avatar={
                         <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">

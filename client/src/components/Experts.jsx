@@ -18,8 +18,9 @@ export default function Experts() {
                     value={currentTab}
                     onChange={handleRoomChange}
                     variant="scrollable"
-                    scrollButtons={false}
-                    aria-label="visible arrows tabs example"
+                    scrollButtons
+                    allowScrollButtonsMobile
+                    aria-label="scrollable force tabs example"
                     sx={{
                         [`& .${tabsClasses.scrollButtons}`]: {
                             '&.Mui-disabled': { opacity: 0.3 },
@@ -38,7 +39,7 @@ export default function Experts() {
             {experts
                 .filter((expert) => expert.type == currentTab)
                 .map((expert, i) => (
-                    <Card sx={{ maxWidth: 345, mb: 2 }} key={i}>
+                    <Card sx={{ mb: 2 }} key={i}>
                         <CardHeader
                             sx={{
                                 alignItems: "end",

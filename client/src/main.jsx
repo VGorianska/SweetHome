@@ -23,7 +23,7 @@ ReactDOM.render(
       <CssBaseline />
       <BrowserRouter>
         <Bar />
-        <Container>
+        <Container disableGutters={true} sx={{ padding: '0 4px' }}>
           <Routes>
             <Route path="/" element={<ImgContainer />} />
             <Route path="/experts" element={<Experts />} />

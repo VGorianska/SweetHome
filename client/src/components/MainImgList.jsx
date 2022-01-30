@@ -13,7 +13,6 @@ export default function MainImgList() {
     const [favouritesState, setFavouritesState] = React.useState(getFavourites());
     const [open, setOpen] = React.useState(false);
     const [openedImg, setOpenedImg] = React.useState();
-    console.log(favouritesState)
     const handleClickOpen = (imgUrl) => {
         setOpenedImg(imgUrl)
         setOpen(true);
@@ -40,14 +39,15 @@ export default function MainImgList() {
     }
 
     return (
-        <Container sx={{ background: '#dde0e7', padding: 0, m: '60px 0' }}>
+        <Container sx={{ background: '#dde0e7', m: '60px 0' }} disableGutters={true}>
             <Box sx={{ flexGrow: 1, width: '100%', height: '40px', bgcolor: 'inherit', padding: 0, margin: 0 }}>
                 <Tabs
                     value={currentTab}
                     onChange={handleRoomChange}
                     variant="scrollable"
-                    scrollButtons={false}
-                    aria-label="visible arrows tabs example"
+                    scrollButtons
+                    allowScrollButtonsMobile
+                    aria-label="scrollable force tabs example"
                     sx={{
                         [`& .${tabsClasses.scrollButtons}`]: {
                             '&.Mui-disabled': { opacity: 0.3 },
