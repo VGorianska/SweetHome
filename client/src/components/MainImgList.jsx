@@ -13,7 +13,7 @@ export default function MainImgList() {
     const [favouritesState, setFavouritesState] = React.useState(getFavourites());
     const [open, setOpen] = React.useState(false);
     const [openedImg, setOpenedImg] = React.useState();
-    console.log('111',favouritesState)
+    console.log(favouritesState)
     const handleClickOpen = (imgUrl) => {
         setOpenedImg(imgUrl)
         setOpen(true);
