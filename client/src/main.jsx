@@ -24,6 +24,7 @@ ReactDOM.render(
       <BrowserRouter>
         <Bar />
         <Container disableGutters={true} sx={{ padding: '0 4px' }}>
+        <div id="back-to-top-anchor"></div>
           <Routes>
             <Route path="/" element={<ImgContainer />} />
             <Route path="/experts" element={<Experts />} />
