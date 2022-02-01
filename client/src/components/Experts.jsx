@@ -1,22 +1,46 @@
 import * as React from 'react';
 import { Tab, Box, Card, CardActions, Avatar, CardHeader, IconButton, Rating, Tabs, tabsClasses, Container, Typography } from '@mui/material';
-import { Phone, Email, LocationOn, Share } from '@mui/icons-material';
+import { Phone, Email, LocationOn, Share, FilterAlt } from '@mui/icons-material';
 import experts from '../experts.json';
+import TextField from '@mui/material/TextField';
+import Autocomplete, { createFilterOptions } from '@mui/material/Autocomplete';
 
 export default function Experts() {
     const [currentTab, setCurrentTab] = React.useState("architects");
+    const [searchTerm, setSearchTerm] = React.useState("");
 
-    const handleRoomChange = (event, newValue) => {
-
+    const handleExpertChange = (event, newValue) => {
         setCurrentTab(newValue);
     };
+
+    function handleLocationFilterChange(event, searchWord) {
+        setSearchTerm(searchWord)
+    }
+
+    const filterOptions = createFilterOptions({
+        stringify: (option) => option
+    });
+
+    const Locations = []
+    experts.forEach((expert) => {
+        if (!Locations.includes(expert.location)) {
+            Locations.push(expert.location)
+        }
+    })
+
+    const filterExpert = (currentTab, expert, searchTerm) => {
+        if (searchTerm && searchTerm.length >= 2 ) {
+            return expert.location.includes(searchTerm) || expert.name.includes(searchTerm)
+        }
+        return expert.type == currentTab; // default
+    }
 
     return (
         <Container sx={{ background: '#dde0e7', padding: 0, m: '70px 0' }}>
             <Box sx={{ flexGrow: 1, width: '100%', bgcolor: 'inherit', padding: 0, margin: 0 }}>
                 <Tabs
                     value={currentTab}
-                    onChange={handleRoomChange}
+                    onChange={handleExpertChange}
                     variant="scrollable"
                     scrollButtons
                     allowScrollButtonsMobile
@@ -35,9 +59,24 @@ export default function Experts() {
                 </Tabs>
             </Box>
 
+            <Autocomplete
+                id="filter-demo"
+                size="small"
+                options={experts.map(expert => expert.name + '–' + expert.location)}
+                getOptionLabel={(option) => option}
+                filterOptions={filterOptions}
+                sx={{ width: 160, position: "fixed", top: 15, right: 8, zIndex: 999999 }}
+                renderInput={(params) => <TextField {...params} variant='standard' />}
+                onChange={handleLocationFilterChange}
+                onInputChange={handleLocationFilterChange}
+            />
+            <IconButton sx={{ color: "white", position: "fixed", top: 12, right: 0, zIndex: 999999 }}>
+                <FilterAlt />
+            </IconButton>
+
 
             {experts
-                .filter((expert) => expert.type == currentTab)
+                .filter((expert) => filterExpert(currentTab, expert, searchTerm))
                 .map((expert, i) => (
                     <Card sx={{ mb: 2 }} key={i}>
                         <CardHeader
