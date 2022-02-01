@@ -24,14 +24,17 @@ export default function Experts() {
     });
 
     const Locations = []
-    experts.forEach((expert) => {
-        if (!Locations.includes(expert.location)) {
-            Locations.push(expert.location)
-        }
-    })
+    experts
+        .filter((expert) => expert.type === currentTab)
+        .forEach((expert) => {
+            if (!Locations.includes(expert.location)) {
+                Locations.push(expert.location)
+            }
+        })
 
     const filterExpert = (currentTab, expert, searchTerm) => {
         if (searchTerm && searchTerm.length >= 2) {
+            console.log(searchTerm)
             return expert.location.includes(searchTerm) || expert.name.includes(searchTerm)
         }
         return expert.type == currentTab; // default
@@ -64,7 +67,7 @@ export default function Experts() {
             <Autocomplete
                 id="filter-demo"
                 size="small"
-                options={experts.map(expert => expert.name + '–' + expert.location)}
+                options={Locations}
                 getOptionLabel={(option) => option}
                 filterOptions={filterOptions}
                 sx={{ width: 160, position: "fixed", top: 15, right: 8, zIndex: 999999 }}
@@ -78,6 +81,7 @@ export default function Experts() {
 
 
             {experts
+                .filter((expert) => expert.type === currentTab)
                 .filter((expert) => filterExpert(currentTab, expert, searchTerm))
                 .map((expert, i) => (
                     <Card sx={{ mb: 2 }} key={i}>
