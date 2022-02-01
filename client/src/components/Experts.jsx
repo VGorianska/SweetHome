@@ -4,6 +4,8 @@ import { Phone, Email, LocationOn, Share, FilterAlt } from '@mui/icons-material'
 import experts from '../experts.json';
 import TextField from '@mui/material/TextField';
 import Autocomplete, { createFilterOptions } from '@mui/material/Autocomplete';
+import { RWebShare } from "react-web-share";
+
 
 export default function Experts() {
     const [currentTab, setCurrentTab] = React.useState("architects");
@@ -29,7 +31,7 @@ export default function Experts() {
     })
 
     const filterExpert = (currentTab, expert, searchTerm) => {
-        if (searchTerm && searchTerm.length >= 2 ) {
+        if (searchTerm && searchTerm.length >= 2) {
             return expert.location.includes(searchTerm) || expert.name.includes(searchTerm)
         }
         return expert.type == currentTab; // default
@@ -99,7 +101,14 @@ export default function Experts() {
                             <Typography sx={{ fontSize: 14, marginRight: 'auto' }} color="text.secondary" gutterBottom>
                                 {expert.location}
                             </Typography>
-                            <IconButton><Share /></IconButton>
+                            <RWebShare
+                                data={{
+                                    text: "Look what I found on Sweet Home App:",
+                                    title: `${expert.name}, ${expert.phonenumber}`
+                                }}
+                            >
+                                <IconButton><Share /></IconButton>
+                            </RWebShare>
                             <IconButton onClick={() => location = `callto: ${expert.phonenumber}`}><Phone /></IconButton>
                             <IconButton onClick={() => location = `mailto: ${expert.mail}`}><Email /></IconButton>
                         </CardActions>

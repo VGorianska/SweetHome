@@ -145,13 +145,7 @@ export default function Registration() {
                             Upload Avatar-Photo
                         </Button>
                     </label>
-                    <StyledBadge
-                        overlap="circular"
-                        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-                        variant="dot"
-                    >
                         <Avatar alt="Mustermann" src="" />
-                    </StyledBadge>
                 </Stack>
                 <FormControl>
                     <FormLabel id="demo-radio-buttons-group-label">Gender</FormLabel>
