@@ -1,27 +1,16 @@
 import * as React from 'react';
-import SearchIcon from '@mui/icons-material/Search';
-import { Container } from '@mui/material';
-import InputBase from '@mui/material/InputBase';
-import Paper from '@mui/material/Paper';
-import Divider from '@mui/material/Divider';
-import IconButton from '@mui/material/IconButton';
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogTitle from '@mui/material/DialogTitle';
-import Slide from '@mui/material/Slide';
-import roomPhotos from '../roomPhotos.json'; import ImageList from '@mui/material/ImageList';
-import ImageListItem from '@mui/material/ImageListItem';
-import ImageListItemBar from '@mui/material/ImageListItemBar';
+import { Search, KeyboardArrowUp } from '@mui/icons-material';
+import { Button, Container, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Divider, Fab, IconButton, ImageList, ImageListItem, ImageListItemBar, InputBase, Paper, Slide } from '@mui/material';
+import roomPhotos from '../roomPhotos.json';
+import ScrollTop from "../components/ScrollToTop";
+
 
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
 });
 
-export default function SearchFun() {
+export default function SearchFun(props) {
     const [open, setOpen] = React.useState(false);
     const [query, setQuery] = React.useState('');
     const [photos, setPhotos] = React.useState([]);
@@ -39,7 +28,7 @@ export default function SearchFun() {
     const handleSearchChange = (event) => {
         setQuery(event.target.value)
         if (event.key === "Enter") {
-            handleSearch(event)   
+            handleSearch(event)
         }
     }
     return (
@@ -56,7 +45,7 @@ export default function SearchFun() {
                 />
                 <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
                 <IconButton color="primary" onClick={handleSearch} sx={{ p: '10px' }} aria-label="search">
-                    <SearchIcon />
+                    <Search />
                 </IconButton>
                 <Dialog
                     open={open}
@@ -91,6 +80,11 @@ export default function SearchFun() {
                         </ImageListItem>
                     ))}
             </ImageList>
+            <ScrollTop {...props}>
+                <Fab color="primary" size="small" aria-label="scroll back to top">
+                    <KeyboardArrowUp />
+                </Fab>
+            </ScrollTop>
         </Container>
     )
 }

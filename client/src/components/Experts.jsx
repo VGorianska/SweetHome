@@ -1,11 +1,12 @@
 import * as React from 'react';
-import { Tab, Box, Card, CardActions, Avatar, CardHeader, IconButton, Rating, Tabs, tabsClasses, Container, Typography, TextField } from '@mui/material';
-import { Phone, Email, LocationOn, Share, FilterAlt } from '@mui/icons-material';
+import { Tab, Box, Card, CardActions, Avatar, CardHeader, Fab, IconButton, Rating, Tabs, tabsClasses, Container, Typography, TextField } from '@mui/material';
+import { Phone, Email, LocationOn, Share, FilterAlt, KeyboardArrowUp } from '@mui/icons-material';
 import experts from '../experts.json';
 import Autocomplete, { createFilterOptions } from '@mui/material/Autocomplete';
 import { RWebShare } from "react-web-share";
+import ScrollTop from "../components/ScrollToTop";
 
-export default function Experts() {
+export default function Experts(props) {
     const [currentTab, setCurrentTab] = React.useState("architects");
     const [searchTerm, setSearchTerm] = React.useState("");
 
@@ -32,7 +33,6 @@ export default function Experts() {
 
     const filterExpert = (currentTab, expert, searchTerm) => {
         if (searchTerm && searchTerm.length >= 2) {
-            console.log(searchTerm)
             return expert.location.includes(searchTerm) || expert.name.includes(searchTerm)
         }
         return expert.type == currentTab; // default
@@ -58,7 +58,6 @@ export default function Experts() {
                     <Tab label="Interior Architects" value="interior_architects" />
                     <Tab label="Construction Companies" value="construction_companies" />
                     <Tab label="Landscape Designers" value="landscape_designers" />
-
                 </Tabs>
             </Box>
 
@@ -76,7 +75,6 @@ export default function Experts() {
             <IconButton sx={{ color: "white", position: "fixed", top: 12, right: 0, zIndex: 999999 }}>
                 <FilterAlt />
             </IconButton>
-
 
             {experts
                 .filter((expert) => expert.type === currentTab)
@@ -116,8 +114,12 @@ export default function Experts() {
                         </CardActions>
                     </Card>
                 ))}
+            <ScrollTop {...props}>
+                <Fab color="primary" size="small" aria-label="scroll back to top">
+                    <KeyboardArrowUp />
+                </Fab>
+            </ScrollTop>
 
         </Container>
     )
 }
-

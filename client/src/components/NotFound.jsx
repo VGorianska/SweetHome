@@ -10,4 +10,3 @@ const Notfoundpage = () => {
 }
 
 export default Notfoundpage
-

@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { useParams } from "react-router-dom";
 import { RWebShare } from "react-web-share";
-import { Card, CardHeader, CardMedia, CardContent, CardActions, Avatar, IconButton, Typography, Stack, CssBaseline, useScrollTrigger, Box, Fab, Zoom } from '@mui/material';
+import { Card, CardHeader, CardMedia, CardContent, CardActions, Avatar, IconButton, Typography, Stack, CssBaseline, Fab } from '@mui/material';
 import { red } from '@mui/material/colors';
-import { Star, Share, KeyboardArrowUp } from '@mui/icons-material';
+import { Share, KeyboardArrowUp } from '@mui/icons-material';
 import articles from "../articles.json";
 import ScrollTop from "../components/ScrollToTop";
 
@@ -33,9 +33,6 @@ export default function Article(props) {
                     />
                     {article.contents.map((item, i) => <CardContent key={i}><Typography variant="body2" color="text.secondary">{item}</Typography></CardContent>)}
                     <CardActions disableSpacing>
-                        <IconButton aria-label="add to favorites">
-                            <Star />
-                        </IconButton>
                         <RWebShare
                             data={{
                                 text: "Look, what I found on Sweet Home App:",

@@ -7,12 +7,10 @@ import MenuItem from '@mui/material/MenuItem';
 import { useNavigate } from "react-router-dom";
 
 export default function Bar() {
-
   const [anchorEl, setAnchorEl] = React.useState(null);
   const selectedIndex = location.pathname; 
   const open = Boolean(anchorEl);
   const navigate = useNavigate();
-
 
   const handleMenuItemClick = (url) => {
     navigate(url, { replace: true });
@@ -63,5 +61,3 @@ export default function Bar() {
 
   );
 }
-
-//const Home = () => <div className={styles.page}>Home Page</div>;

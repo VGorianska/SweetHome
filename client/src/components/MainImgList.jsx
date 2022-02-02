@@ -1,13 +1,14 @@
 import * as React from 'react';
-import { ImageList, ImageListItem, IconButton, ImageListItemBar, Container, Tabs, Tab, tabsClasses, Box, Dialog, DialogTitle, DialogContent, Slide } from '@mui/material';
-import { Star, StarBorder, HighlightOff } from '@mui/icons-material';
+import { ImageList, ImageListItem, IconButton, ImageListItemBar, Container, Tabs, Tab, tabsClasses, Box, Dialog, DialogTitle, DialogContent, Slide, Fab } from '@mui/material';
+import { Star, StarBorder, HighlightOff, KeyboardArrowUp } from '@mui/icons-material';
 import { findPhotos, getFavourites, setFavourites } from '../lib/data.js';
+import ScrollTop from "../components/ScrollToTop";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
 });
 
-export default function MainImgList() {
+export default function MainImgList(props) {
     const [currentTab, setCurrentTab] = React.useState("livingroom");
     const photos = findPhotos({ type: currentTab });
     const [favouritesState, setFavouritesState] = React.useState(getFavourites());
@@ -117,6 +118,11 @@ export default function MainImgList() {
                     />
                 </DialogContent>
             </Dialog>
+            <ScrollTop {...props}>
+                <Fab color="primary" size="small" aria-label="scroll back to top">
+                    <KeyboardArrowUp />
+                </Fab>
+            </ScrollTop>
         </Container>
     )
 }

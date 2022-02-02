@@ -1,15 +1,16 @@
 import * as React from 'react';
-import { ImageList, ImageListItem, IconButton, ImageListItemBar, Container, Tabs, tabsClasses, Tab, Box, Slide, Dialog, DialogTitle, DialogContent } from '@mui/material';
-import {Star, HighlightOff} from '@mui/icons-material';
+import { ImageList, ImageListItem, IconButton, ImageListItemBar, Container, Tabs, tabsClasses, Tab, Box, Slide, Dialog, DialogTitle, DialogContent, Fab } from '@mui/material';
+import { Star, HighlightOff, KeyboardArrowUp } from '@mui/icons-material';
 import { findPhotos, getFavourites, setFavourites } from '../lib/data.js';
+import ScrollTop from "../components/ScrollToTop";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
 });
 
-export default function Favourites() {
+export default function Favourites(props) {
     const [currentTab, setCurrentTab] = React.useState("favourites");
-    const photos = findPhotos();   
+    const photos = findPhotos();
     const [open, setOpen] = React.useState(false);
     const [openedImg, setOpenedImg] = React.useState();
     const [favouritesState, setFavouritesState] = React.useState(getFavourites());
@@ -54,7 +55,7 @@ export default function Favourites() {
                     }}
                 >
                     <Tab label="All Favourites" value="favourites" />
-                    
+
                 </Tabs>
             </Box>
 
@@ -98,13 +99,18 @@ export default function Favourites() {
                         <HighlightOff sx={{ color: "white" }} />
                     </IconButton>
                 </DialogTitle>
-                <DialogContent sx={{ m: 0, backgroundColor: "black"}}>
+                <DialogContent sx={{ m: 0, backgroundColor: "black" }}>
                     <img
                         src={`${openedImg}?w=1200&fit=crop&auto=format`}
                         style={{ width: "100%" }}
                     />
                 </DialogContent>
             </Dialog>
+            <ScrollTop {...props}>
+                <Fab color="primary" size="small" aria-label="scroll back to top">
+                    <KeyboardArrowUp />
+                </Fab>
+            </ScrollTop>
         </Container>
     )
 }
