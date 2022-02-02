@@ -7,7 +7,6 @@ import { Share, KeyboardArrowUp } from '@mui/icons-material';
 import articles from "../articles.json";
 import ScrollTop from "../components/ScrollToTop";
 
-
 export default function Article(props) {
     let params = useParams();
     const article = articles.find((item) => item.id == params.article)

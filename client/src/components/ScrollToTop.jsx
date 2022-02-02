@@ -1,8 +1,6 @@
 import PropTypes from 'prop-types';
 import { useScrollTrigger, Box, Zoom } from '@mui/material';
 
-
-
 export default function ScrollTop(props) {
     const { children, window } = props;
     // Note that you normally won't need to set the window ref as useScrollTrigger

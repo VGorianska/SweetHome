@@ -4,8 +4,6 @@ import { Button, Container, Dialog, DialogActions, DialogContent, DialogContentT
 import roomPhotos from '../roomPhotos.json';
 import ScrollTop from "../components/ScrollToTop";
 
-
-
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
 });
