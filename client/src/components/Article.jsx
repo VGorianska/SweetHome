@@ -1,17 +1,11 @@
 import * as React from 'react';
 import { useParams } from "react-router-dom";
-import Card from '@mui/material/Card';
-import CardHeader from '@mui/material/CardHeader';
-import CardMedia from '@mui/material/CardMedia';
-import CardContent from '@mui/material/CardContent';
-import CardActions from '@mui/material/CardActions';
-import Avatar from '@mui/material/Avatar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
+import { Card, CardHeader, CardMedia, CardContent, CardActions, Avatar, IconButton, Typography, Stack } from '@mui/material';
 import { red } from '@mui/material/colors';
 import { Star, Share } from '@mui/icons-material';
-import { Stack } from '@mui/material';
 import articles from "../articles.json";
+import { RWebShare } from "react-web-share";
+
 
 
 
@@ -43,10 +37,15 @@ export default function Article() {
                     <IconButton aria-label="add to favorites">
                         <Star />
                     </IconButton>
-                    <IconButton aria-label="share">
-                        <Share />
-                    </IconButton>
-
+                    <RWebShare
+                        data={{
+                            text: "Look, what I found on Sweet Home App:",
+                            title: `${article.title}\n ${article.author}`,
+                            contents: article.contents
+                        }}
+                    >
+                        <IconButton><Share /></IconButton>
+                    </RWebShare>
                 </CardActions>
 
             </Card>

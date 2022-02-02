@@ -13,6 +13,7 @@ import { Stack, Button } from '@mui/material';
 import Pagination from '@mui/material/Pagination';
 import articles from "../articles.json";
 import { useNavigate } from "react-router-dom";
+import { RWebShare } from "react-web-share";
 
 
 
@@ -22,7 +23,7 @@ export default function News() {
     const selectedIndex = location.pathname;
     const handleMenuItemClick = (url) => {
         navigate(url, { replace: true });
-        
+
     };
     return (
         <Stack spacing={2} sx={{ background: '#dde0e7', padding: 0, m: '70px 0' }}>
@@ -51,9 +52,15 @@ export default function News() {
                     <IconButton aria-label="add to favorites">
                         <Star />
                     </IconButton>
-                    <IconButton aria-label="share">
-                        <Share />
-                    </IconButton>
+                    <RWebShare
+                        data={{
+                            text: "Look, what I found on Sweet Home App:",
+                            title: `${article.title}\n ${article.author}`,
+                            contents: article.contents
+                        }}
+                    >
+                        <IconButton><Share /></IconButton>
+                    </RWebShare>
                     <Button variant="contained" sx={{ ml: "auto" }} onClick={() => handleMenuItemClick('/news/1')} selected={selectedIndex === '/news/1'}>Read more</Button>
                 </CardActions>
 
