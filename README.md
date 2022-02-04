@@ -1,0 +1,2 @@
+# SweetHome
+There are a million and one things to think about when renovating a house or even just decorating a room, for that matter. From color schemes to furniture layout, your head is probably spinning just trying to stay on top of it all. The good news? Help is here. There's a lot of tips, photos and features in this app, that can help you through the process, or just serve up some inspiration!
