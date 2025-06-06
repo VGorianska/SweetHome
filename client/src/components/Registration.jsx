@@ -145,7 +145,7 @@ export default function Registration() {
                             Upload Avatar-Photo
                         </Button>
                     </label>
-                        <Avatar alt="Mustermann" src="" />
+                    <Avatar alt="Mustermann" src="" />
                 </Stack>
                 <FormControl>
                     <FormLabel id="demo-radio-buttons-group-label">Gender</FormLabel>
