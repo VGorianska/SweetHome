@@ -14,7 +14,6 @@ server.get('/api/subscribe', (req, res) => onSubscribe(req, res));
 
 // sending a message
 server.post('/api/publish', (req, res) => {
-  console.log(req.body);
   publish(req.body.message); // publish it to everyone
   res.send('ok');
 });
@@ -40,7 +39,6 @@ function onSubscribe(req, res) {
   subscribers[id] = res;
 
   req.on('close', function () {
-    console.log('Close subscribers');
     delete subscribers[id];
   });
 }
